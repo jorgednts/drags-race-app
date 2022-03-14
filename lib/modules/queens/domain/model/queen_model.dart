@@ -1,3 +1,6 @@
+import 'lypsincs_model.dart';
+import 'season_model.dart';
+
 class QueenModel {
   QueenModel({
     required this.id,
@@ -7,6 +10,7 @@ class QueenModel {
     required this.quote,
     required this.imageUrl,
     required this.seasonsList,
+    required this.lipsyncsList,
   });
 
   final int id;
@@ -19,19 +23,5 @@ class QueenModel {
   final List<Lipsyncs> lipsyncsList;
 }
 
-class Lipsyncs {
-  Lipsyncs({
-    required this.id,
-    required this.won,
-    required this.name,
-    required this.artist,
-  });
 
-  final int id;
-  final bool won;
-  final String name;
-  final String artist;
-
-
-}
 
