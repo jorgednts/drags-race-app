@@ -1,4 +1,4 @@
-import 'lypsincs_model.dart';
+import 'lipsync_model.dart';
 import 'season_model.dart';
 
 class QueenModel {
