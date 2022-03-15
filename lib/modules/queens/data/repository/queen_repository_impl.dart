@@ -5,7 +5,7 @@ import '../remote/data_source/drags_race_remote_data_source.dart';
 
 class QueenRepositoryImpl implements QueenRepository {
   QueenRepositoryImpl({
-    required dragsRaceRemoteDataSource,
+    required DragsRaceRemoteDataSource dragsRaceRemoteDataSource,
   }) : _dragsRaceRemoteDataSource = dragsRaceRemoteDataSource;
 
   final DragsRaceRemoteDataSource _dragsRaceRemoteDataSource;
