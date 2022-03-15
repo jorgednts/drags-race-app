@@ -1,6 +1,7 @@
 import 'lipsync_model.dart';
 import 'season_model.dart';
 
+
 class QueenDetailsModel {
   QueenDetailsModel({
     required this.id,
