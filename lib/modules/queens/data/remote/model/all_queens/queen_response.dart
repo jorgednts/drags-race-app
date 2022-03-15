@@ -16,7 +16,7 @@ class QueenResponse {
   factory QueenResponse.fromJson(Map<String, dynamic> json) =>
       _$QueenResponseFromJson(json);
 
-  int id;
+  int? id;
   String? name;
   bool? winner;
   bool? missCongeniality;
@@ -24,4 +24,7 @@ class QueenResponse {
   String? quote;
 
   Map<String, dynamic> toJson() => _$QueenResponseToJson(this);
+
+  static List<QueenResponse> fromJsonList(List<dynamic>? json) =>
+      json?.map((i) => QueenResponse.fromJson(i)).toList() ?? [];
 }

@@ -8,7 +8,7 @@ part of 'queen_response.dart';
 
 QueenResponse _$QueenResponseFromJson(Map<String, dynamic> json) =>
     QueenResponse(
-      json['id'] as int,
+      json['id'] as int?,
       json['name'] as String?,
       json['winner'] as bool?,
       json['miss_congeniality'] as bool?,

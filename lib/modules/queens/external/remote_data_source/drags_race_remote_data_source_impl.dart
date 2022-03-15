@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:drags_race_app/modules/queens/data/remote/model/all_queens/all_queens_response.dart';
 
 import '../../constants/queens_constants_url_api.dart';
 import '../../data/remote/data_source/drags_race_remote_data_source.dart';
@@ -14,14 +15,9 @@ class DragsRaceRemoteDataSourceImpl implements DragsRaceRemoteDataSource {
   @override
   Future<List<AllQueensModel>> getAllQueens() async {
     final response = await _dio.get(QueensConstantsUrlApi.allQueensBaseUrl);
-    final queensResponse = <QueenResponse>[];
-
-
-    final allQueensList = List<AllQueensModel>;
+    final queensResponse = QueenResponse.fromJsonList(response.data);
 
     for(final queenResponse in queensResponse){
-      final queen = QueenResponse.fromJson(response.data);
-      allQueensList ;
 
     }
 
