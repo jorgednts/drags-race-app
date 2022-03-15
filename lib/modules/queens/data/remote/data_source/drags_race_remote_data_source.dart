@@ -6,5 +6,5 @@ abstract class DragsRaceRemoteDataSource {
 
   Future<QueenDetailsModel> getQueen(int queenID);
 
-  Future<QueenDetailsModel> getTypedQueen();
+  Future<AllQueensModel> getTypedQueen(String typedQueen);
 }
