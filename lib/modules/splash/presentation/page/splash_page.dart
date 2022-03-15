@@ -21,7 +21,7 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.cyan[200],
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -29,7 +29,10 @@ class _SplashPageState extends State<SplashPage> {
             children: [
               Padding(
                 padding: const EdgeInsets.all(15),
-                child: Image.asset(QueenConstantsImages.splashLogo),
+                child: Image.asset(
+                  QueenConstantsImages.splashLogo,
+                  color: Colors.pink[300],
+                ),
               ),
             ],
           ),
