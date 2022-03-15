@@ -1,8 +1,8 @@
 import 'lipsync_model.dart';
 import 'season_model.dart';
 
-class QueenModel {
-  QueenModel({
+class QueenDetailsModel {
+  QueenDetailsModel({
     required this.id,
     required this.name,
     required this.winner,
