@@ -6,16 +6,17 @@ import '../season/seasons_response.dart';
 part 'queen_details_response.g.dart';
 
 @JsonSerializable(fieldRename: FieldRename.snake)
-class QueenDetailsResponse{
-  QueenDetailsResponse(
-      {this.id,
-        this.name,
-        this.winner,
-        this.missCongeniality,
-        this.imageUrl,
-        this.quote,
-        this.lipsyncs,
-        this.seasons});
+class QueenDetailsResponse {
+  QueenDetailsResponse({
+    this.id,
+    this.name,
+    this.winner,
+    this.missCongeniality,
+    this.imageUrl,
+    this.quote,
+    this.lipsyncs,
+    this.seasons,
+  });
 
   factory QueenDetailsResponse.fromJson(Map<String, dynamic> json) =>
       _$QueenDetailsResponseFromJson(json);

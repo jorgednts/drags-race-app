@@ -4,7 +4,11 @@ part 'season_response.g.dart';
 
 @JsonSerializable(fieldRename: FieldRename.snake)
 class SeasonResponse {
-  SeasonResponse({this.seasonNumber, this.id, this.place});
+  SeasonResponse({
+    this.seasonNumber,
+    this.id,
+    this.place,
+  });
 
   factory SeasonResponse.fromJson(Map<String, dynamic> json) =>
       _$SeasonResponseFromJson(json);

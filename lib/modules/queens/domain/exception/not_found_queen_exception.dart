@@ -1,0 +1,4 @@
+
+class NotFoundQueenException implements Exception {
+
+}

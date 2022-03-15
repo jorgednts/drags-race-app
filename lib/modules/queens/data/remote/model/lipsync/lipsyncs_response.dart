@@ -6,7 +6,9 @@ part 'lipsyncs_response.g.dart';
 
 @JsonSerializable(fieldRename: FieldRename.snake)
 class LipsyncsResponse {
-  LipsyncsResponse({required this.lipsync});
+  LipsyncsResponse({
+    required this.lipsync,
+  });
 
   factory LipsyncsResponse.fromJson(Map<String, dynamic> json) =>
       _$LipsyncsResponseFromJson(json);

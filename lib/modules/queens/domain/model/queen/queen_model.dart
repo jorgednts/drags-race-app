@@ -1,5 +1,5 @@
-class AllQueensModel{
-  AllQueensModel({
+class QueenModel{
+  QueenModel({
     required this.id,
     required this.name,
     required this.winner,
