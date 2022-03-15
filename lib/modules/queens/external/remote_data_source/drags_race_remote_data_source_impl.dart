@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:drags_race_app/modules/queens/data/remote/model/details/queen_details_response.dart';
 
 import '../../constants/queens_constants_url_api.dart';
 import '../../data/mapper/remote_to_model.dart';
@@ -14,21 +15,30 @@ class DragsRaceRemoteDataSourceImpl implements DragsRaceRemoteDataSource {
 
   @override
   Future<List<AllQueensModel>> getAllQueens() async {
-    final response = await _dio.get(QueensConstantsUrlApi.allQueensBaseUrl);
-    final queensResponse = QueenResponse.fromJsonList(response.data);
-    final queenModelList = <AllQueensModel>[];
+    try {
+      final response = await _dio.get(QueensConstantsUrlApi.allQueensBaseUrl);
+      final queensResponse = QueenResponse.fromJsonList(response.data);
+      final queenModelList = <AllQueensModel>[];
 
-    for(final queenResponse in queensResponse){
-      final queenModel = convertToAllQueensModelList(queenResponse);
-      queenModelList.add(queenModel);
+      for (final queenResponse in queensResponse) {
+        final queenModel = convertToAllQueensModelList(queenResponse);
+        queenModelList.add(queenModel);
+      }
+      return queenModelList;
+    } on DioError catch (dioError, _) {
+      throw Exception();
     }
-    return queenModelList;
   }
 
   @override
-  Future<QueenDetailsModel> getQueen() {
-    // TODO: implement getQueen
-    throw UnimplementedError();
+  Future<QueenDetailsModel> getQueen(int queenID) async {
+    final response = await _dio
+        .get('${QueensConstantsUrlApi.queenBaseUrl}${queenID.toString()}');
+    final queenDetailsResponse = QueenDetailsResponse.fromJson(response.data);
+    final QueenDetailsModel queenDetailsModel;
+
+
+    return queenDetailsModel;
   }
 
   @override
@@ -36,5 +46,4 @@ class DragsRaceRemoteDataSourceImpl implements DragsRaceRemoteDataSource {
     // TODO: implement getTypedQueen
     throw UnimplementedError();
   }
-
 }

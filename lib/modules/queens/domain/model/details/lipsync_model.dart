@@ -1,5 +1,5 @@
-class Lipsyncs {
-  Lipsyncs({
+class LipsyncModel {
+  LipsyncModel({
     required this.id,
     required this.won,
     required this.name,

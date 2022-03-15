@@ -20,8 +20,8 @@ class QueenDetailsModel {
   final bool missCongeniality;
   final String quote;
   final String imageUrl;
-  final List<Seasons> seasonsList;
-  final List<Lipsyncs> lipsyncsList;
+  final List<SeasonModel> seasonsList;
+  final List<LipsyncModel> lipsyncsList;
 }
 
 
