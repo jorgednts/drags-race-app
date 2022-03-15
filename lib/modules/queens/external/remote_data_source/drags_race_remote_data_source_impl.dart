@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:drags_race_app/modules/queens/domain/exception/not_found_queen_exception.dart';
 
 import '../../constants/queens_constants_url_api.dart';
 import '../../data/mapper/remote_to_model.dart';
@@ -10,6 +9,7 @@ import '../../data/remote/model/details/queen_details_response.dart';
 import '../../data/remote/model/queen/queen_response.dart';
 import '../../domain/exception/generic_error_status_code_exception.dart';
 import '../../domain/exception/network_error_exception.dart';
+import '../../domain/exception/not_found_queen_exception.dart';
 import '../../domain/model/details/queen_details_model.dart';
 import '../../domain/model/queen/queen_model.dart';
 
