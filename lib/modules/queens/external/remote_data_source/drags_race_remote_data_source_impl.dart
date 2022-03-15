@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:drags_race_app/modules/queens/constants/queens_constants_url_api.dart';
-import 'package:drags_race_app/modules/queens/data/remote/model/all_queens/queen_response.dart';
 
+import '../../constants/queens_constants_url_api.dart';
 import '../../data/remote/data_source/drags_race_remote_data_source.dart';
+import '../../data/remote/model/all_queens/queen_response.dart';
 import '../../domain/model/all_queens/all_queens_model.dart';
 import '../../domain/model/details/queen_details_model.dart';
 
