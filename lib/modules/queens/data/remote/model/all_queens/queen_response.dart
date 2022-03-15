@@ -1,10 +1,10 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'all_queens_response.g.dart';
+part 'queen_response.g.dart';
 
 @JsonSerializable(fieldRename: FieldRename.snake)
-class AllQueensResponse {
-  AllQueensResponse(
+class QueenResponse {
+  QueenResponse(
     this.id,
     this.name,
     this.winner,
@@ -13,8 +13,8 @@ class AllQueensResponse {
     this.quote,
   );
 
-  factory AllQueensResponse.fromJson(Map<String, dynamic> json) =>
-      _$AllQueensResponseFromJson(json);
+  factory QueenResponse.fromJson(Map<String, dynamic> json) =>
+      _$QueenResponseFromJson(json);
 
   int id;
   String? name;
@@ -23,5 +23,5 @@ class AllQueensResponse {
   String? imageUrl;
   String? quote;
 
-  Map<String, dynamic> toJson() => _$AllQueensResponseToJson(this);
+  Map<String, dynamic> toJson() => _$QueenResponseToJson(this);
 }

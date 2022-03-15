@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'all_queens_response.dart';
+part of 'queen_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-AllQueensResponse _$AllQueensResponseFromJson(Map<String, dynamic> json) =>
-    AllQueensResponse(
+QueenResponse _$QueenResponseFromJson(Map<String, dynamic> json) =>
+    QueenResponse(
       json['id'] as int,
       json['name'] as String?,
       json['winner'] as bool?,
@@ -16,7 +16,7 @@ AllQueensResponse _$AllQueensResponseFromJson(Map<String, dynamic> json) =>
       json['quote'] as String?,
     );
 
-Map<String, dynamic> _$AllQueensResponseToJson(AllQueensResponse instance) =>
+Map<String, dynamic> _$QueenResponseToJson(QueenResponse instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
