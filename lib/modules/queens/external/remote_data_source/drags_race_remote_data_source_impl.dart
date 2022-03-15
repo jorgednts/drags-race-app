@@ -32,12 +32,11 @@ class DragsRaceRemoteDataSourceImpl implements DragsRaceRemoteDataSource {
 
   @override
   Future<QueenDetailsModel> getQueen(int queenID) async {
+
     final response = await _dio
         .get('${QueensConstantsUrlApi.queenBaseUrl}${queenID.toString()}');
     final queenDetailsResponse = QueenDetailsResponse.fromJson(response.data);
-    final QueenDetailsModel queenDetailsModel;
-
-
+    final queenDetailsModel = convertToQueenDetailsModel(queenDetailsResponse);
     return queenDetailsModel;
   }
 
