@@ -8,12 +8,12 @@ part of 'all_queens_response.dart';
 
 AllQueensResponse _$AllQueensResponseFromJson(Map<String, dynamic> json) =>
     AllQueensResponse(
-      id: json['id'] as int?,
-      name: json['name'] as String?,
-      winner: json['winner'] as bool?,
-      missCongeniality: json['miss_congeniality'] as bool?,
-      imageUrl: json['image_url'] as String?,
-      quote: json['quote'] as String?,
+      json['id'] as int,
+      json['name'] as String?,
+      json['winner'] as bool?,
+      json['miss_congeniality'] as bool?,
+      json['image_url'] as String?,
+      json['quote'] as String?,
     );
 
 Map<String, dynamic> _$AllQueensResponseToJson(AllQueensResponse instance) =>
