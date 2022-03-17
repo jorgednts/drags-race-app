@@ -1,3 +1,4 @@
+import 'package:drags_race_app/modules/drag_race_constants/drag_race_constants_colors.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants/splash_constants_images.dart';
@@ -16,12 +17,12 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    //control.goToPokedexPage(context);
+    //control.LoginPage(context);
   }
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        backgroundColor: Colors.cyan[200],
+        backgroundColor: DragRaceConstantsColors.dragRacePrimaryColor,
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -31,7 +32,7 @@ class _SplashPageState extends State<SplashPage> {
                 padding: const EdgeInsets.all(18),
                 child: Image.asset(
                   SplashConstantsImages.splashLogo,
-                  color: Colors.pink[300],
+                  color: DragRaceConstantsColors.dragRaceSecondaryColor,
                 ),
               ),
             ],
