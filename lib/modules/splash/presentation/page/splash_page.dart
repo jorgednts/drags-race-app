@@ -1,6 +1,6 @@
-import 'package:drags_race_app/modules/drag_race_constants/drag_race_constants_colors.dart';
 import 'package:flutter/material.dart';
 
+import '../../../drag_race_constants/drag_race_constants_colors.dart';
 import '../../constants/splash_constants_images.dart';
 import '../controller/splash_controller.dart';
 
@@ -17,7 +17,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    //control.LoginPage(context);
+    control.goToLoginPage(context);
   }
 
   @override
@@ -29,7 +29,7 @@ class _SplashPageState extends State<SplashPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.all(18),
+                padding: const EdgeInsets.all(25),
                 child: Image.asset(
                   SplashConstantsImages.splashLogo,
                   color: DragRaceConstantsColors.dragRaceSecondaryColor,
