@@ -3,5 +3,8 @@
   "loginPageEmailHintText": "e-mail",
   "loginPagePasswordHintText": "senha",
   "loginPageElevatedButtonText": "Fazer Login",
-  "loginPageSnackBarText": "CREDENCIAIS INCORRETAS, TENTE NOVAMENTE!"
+  "loginPageSnackBarText": "CREDENCIAIS INCORRETAS, TENTE NOVAMENTE!",
+  "loginPageInitialInfoText": "DIGITE SUAS CREDENCIAIS",
+  "loginPageInvalidCredentialsInfoText": "OOH GIRL, CREDENCIAIS INCORRETAS, TENTE NOVAMENTE!",
+  "loginPageSuccessfulLoginInfoText": "LIGUEM SEUS MOTORES!"
 }

@@ -3,5 +3,8 @@
   "loginPageEmailHintText": "e-mail",
   "loginPagePasswordHintText": "password",
   "loginPageElevatedButtonText": "Login",
-  "loginPageSnackBarText": "WRONG CREDENTIALS, TRY AGAIN!"
+  "loginPageSnackBarText": "WRONG CREDENTIALS, TRY AGAIN!",
+  "loginPageInitialInfoText": "TYPE YOUR CREDENTIALS",
+  "loginPageInvalidCredentialsInfoText": "OOH GIRL, INVALID CREDENTIALS, TRY AGAIN!",
+  "loginPageSuccessfulLoginInfoText": "START YOUR ENGINES!"
 }
