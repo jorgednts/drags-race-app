@@ -5,15 +5,9 @@ import '../page/login_page_state.dart';
 
 class LoginPageController extends ValueNotifier<LoginPageState> {
   LoginPageController({required this.verifyLoginUseCase})
-      : super(LoginPageState.successLogin);
+      : super(LoginPageState.initialState);
 
   final VerifyLoginUseCase verifyLoginUseCase;
 
-  LoginPageState login() {
-    if (verifyLoginUseCase.verify() == true) {
-      return LoginPageState.successLogin;
-    } else {
-      return LoginPageState.credentialError;
-    }
-  }
+  LoginPageState login() => value = verifyLoginUseCase.verify();
 }
