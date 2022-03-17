@@ -11,12 +11,14 @@ class CustomTextFieldWidget extends StatelessWidget {
 
   final String hintText;
   final bool obscureText;
+  final TextEditingController textEditingController;
 
   @override
   Widget build(BuildContext context) => SizedBox(
-    height: 50,
-    width: 280,
-    child: TextField(
+        height: 50,
+        width: 280,
+        child: TextField(
+          controller: textEditingController,
           obscureText: obscureText,
           decoration: InputDecoration(
             contentPadding: const EdgeInsets.only(left: 10),
@@ -26,5 +28,5 @@ class CustomTextFieldWidget extends StatelessWidget {
             border: const UnderlineInputBorder(),
           ),
         ),
-  );
+      );
 }
