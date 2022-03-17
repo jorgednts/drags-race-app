@@ -5,6 +5,7 @@ import '../../../drag_race_constants/drag_race_constants_colors.dart';
 class CustomTextFieldWidget extends StatelessWidget {
   const CustomTextFieldWidget({
     required this.hintText,
+    required this.textEditingController,
     Key? key,
     this.obscureText = false,
   }) : super(key: key);

@@ -1,9 +1,13 @@
-import '../common/custom_text_field_widget.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../generated/l10n.dart';
 import '../../../drag_race_constants/drag_race_constants_colors.dart';
+import '../../../queens/presentation/page/search_queen_page.dart';
 import '../../constants/login_page_image_constants.dart';
-import 'package:drags_race_app/generated/l10n.dart';
+import '../../domain/use_case/verify_login_use_case.dart';
+import '../common/custom_text_field_widget.dart';
+import '../controller/login_page_controller.dart';
+import 'login_page_state.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -13,24 +17,47 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  late VerifyLoginUseCase verifyLoginUseCase;
+  late LoginPageController controller;
+  final TextEditingController userEmail = TextEditingController();
+  final TextEditingController userPassword = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    verifyLoginUseCase = VerifyLoginUseCaseImpl(
+        userEmail: userEmail.toString(), userPassword: userPassword.toString());
+    controller = LoginPageController(verifyLoginUseCase: verifyLoginUseCase);
+    controller.value = LoginPageState.initialState;
+  }
+
+  Widget setInfoText(String infoText) => Container(
+        child: Text(
+          infoText,
+          style: const TextStyle(
+              fontSize: 15,
+              color: DragRaceConstantsColors.secondaryColor),
+        ),
+      );
+
   @override
   Widget build(BuildContext context) => Scaffold(
-        body: SingleChildScrollView(
-          child: Container(
-            height: MediaQuery.of(context).size.height,
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                stops: [0.1, 0.3, 0.7, 1.0],
-                colors: [
-                  DragRaceConstantsColors.thirdGradientColor,
-                  DragRaceConstantsColors.secondGradientColor,
-                  DragRaceConstantsColors.firstGradientColor,
-                  DragRaceConstantsColors.primaryColor,
-                ],
-              ),
+        body: Container(
+          height: MediaQuery.of(context).size.height,
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              stops: [0.1, 0.3, 0.7, 1.0],
+              colors: [
+                DragRaceConstantsColors.thirdGradientColor,
+                DragRaceConstantsColors.secondGradientColor,
+                DragRaceConstantsColors.firstGradientColor,
+                DragRaceConstantsColors.primaryColor,
+              ],
             ),
+          ),
+          child: SingleChildScrollView(
             child: Center(
               child: Column(
                 children: [
@@ -55,6 +82,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                         CustomTextFieldWidget(
+                          textEditingController: userEmail,
                           hintText: S.of(context).loginPageEmailHintText,
                         ),
                       ],
@@ -74,6 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                         CustomTextFieldWidget(
+                          textEditingController: userPassword,
                           hintText: S.of(context).loginPagePasswordHintText,
                         ),
                       ],
@@ -88,15 +117,35 @@ class _LoginPageState extends State<LoginPage> {
                         style: ElevatedButton.styleFrom(
                           primary: DragRaceConstantsColors.secondaryColor,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          controller.login();
+                          if (controller.value == LoginPageState.successLogin) {
+                            MaterialPageRoute(
+                                builder: (context) => const SearchQueenPage());
+                          }
+                        },
                         child: Text(
                           S.of(context).loginPageElevatedButtonText,
                           style: const TextStyle(fontSize: 18),
                         ),
-
                       ),
                     ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20),
+                    child: ValueListenableBuilder<LoginPageState>(
+                        valueListenable: controller,
+                        builder: (context, state, _) {
+                          switch (state) {
+                            case LoginPageState.initialState:
+                              return setInfoText('Digite suas credenciais');
+                            case LoginPageState.credentialError:
+                              return setInfoText('Credenciais Inválidas');
+                            case LoginPageState.successLogin:
+                              return setInfoText('Sucesso');
+                          }
+                        }),
+                  )
                 ],
               ),
             ),

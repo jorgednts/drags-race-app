@@ -26,9 +26,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Fazer Login"),
         "loginPageEmailHintText":
             MessageLookupByLibrary.simpleMessage("e-mail"),
+        "loginPageInitialInfoText":
+            MessageLookupByLibrary.simpleMessage("DIGITE SUAS CREDENCIAIS"),
+        "loginPageInvalidCredentialsInfoText":
+            MessageLookupByLibrary.simpleMessage(
+                "OOH GIRL, CREDENCIAIS INCORRETAS, TENTE NOVAMENTE!"),
         "loginPagePasswordHintText":
             MessageLookupByLibrary.simpleMessage("senha"),
         "loginPageSnackBarText": MessageLookupByLibrary.simpleMessage(
-            "CREDENCIAIS INCORRETAS, TENTE NOVAMENTE!")
+            "CREDENCIAIS INCORRETAS, TENTE NOVAMENTE!"),
+        "loginPageSuccessfulLoginInfoText":
+            MessageLookupByLibrary.simpleMessage("LIGUEM SEUS MOTORES!")
       };
 }

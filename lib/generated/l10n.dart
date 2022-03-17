@@ -89,6 +89,36 @@ class S {
       args: [],
     );
   }
+
+  /// `TYPE YOUR CREDENTIALS`
+  String get loginPageInitialInfoText {
+    return Intl.message(
+      'TYPE YOUR CREDENTIALS',
+      name: 'loginPageInitialInfoText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OOH GIRL, INVALID CREDENTIALS, TRY AGAIN!`
+  String get loginPageInvalidCredentialsInfoText {
+    return Intl.message(
+      'OOH GIRL, INVALID CREDENTIALS, TRY AGAIN!',
+      name: 'loginPageInvalidCredentialsInfoText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `START YOUR ENGINES!`
+  String get loginPageSuccessfulLoginInfoText {
+    return Intl.message(
+      'START YOUR ENGINES!',
+      name: 'loginPageSuccessfulLoginInfoText',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
