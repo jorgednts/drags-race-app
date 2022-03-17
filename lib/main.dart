@@ -1,3 +1,4 @@
+import 'package:drags_race_app/modules/drag_race_constants/drag_race_constants_colors.dart';
 import 'package:drags_race_app/modules/splash/presentation/page/splash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "RuPaul's Drags Race App",
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: DragRaceConstantsColors.primaryColor,
       ),
       home: const SplashPage(),
     localizationsDelegates: const [

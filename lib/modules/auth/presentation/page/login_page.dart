@@ -1,3 +1,4 @@
+import 'package:drags_race_app/modules/auth/presentation/common/custom_text_field_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../../drag_race_constants/drag_race_constants_colors.dart';
@@ -12,8 +13,8 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   @override
-  Widget build(BuildContext context) => SingleChildScrollView(
-        child: Container(
+  Widget build(BuildContext context) => Scaffold(
+        body: Container(
           height: MediaQuery.of(context).size.height,
           decoration: const BoxDecoration(
             gradient: LinearGradient(
@@ -32,23 +33,29 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 120),
+                  padding: const EdgeInsets.only(top: 150),
                   child: Image.asset(
                     LoginPageImageConstants.raceLogo,
                     height: 120,
                   ),
                 ),
-                const Expanded(
-                  child: Padding(
-                    padding: EdgeInsets.all(15),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'e-mail',
-                        hintStyle: TextStyle(
-                            color: DragRaceConstantsColors.hintTextColor),
+                Padding(
+                  padding: const EdgeInsets.only(top: 15, left: 15),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Padding(
+                        padding: EdgeInsets.only(right: 8),
+                        child: Icon(
+                          Icons.account_circle_rounded,
+                          color: DragRaceConstantsColors.hintTextColor,
+                          size: 30,
+                        ),
                       ),
-                    ),
+                      CustomTextFieldWidget(hintText: 'e-mail',)
+                    ],
                   ),
+
                 ),
               ],
             ),
