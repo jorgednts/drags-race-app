@@ -1,5 +1,7 @@
+import 'package:drags_race_app/modules/auth/presentation/page/login_page_state.dart';
+
 abstract class VerifyLoginUseCase {
-  bool verify();
+  LoginPageState verify();
 }
 
 class VerifyLoginUseCaseImpl implements VerifyLoginUseCase {
@@ -12,13 +14,15 @@ class VerifyLoginUseCaseImpl implements VerifyLoginUseCase {
   final String userPassword;
 
   @override
-  bool verify() {
-    final bool successfulLogin;
+  LoginPageState verify() {
+    LoginPageState loginPageState;
     if(userEmail == 'user@dragsrace.com' && userPassword == 'ornacia123'){
-      successfulLogin = true;
+      loginPageState = LoginPageState.successLogin;
+    }if(userEmail.isEmpty || userPassword.isEmpty){
+      loginPageState = LoginPageState.initialState;
     }else{
-      successfulLogin = false;
+      loginPageState = LoginPageState.credentialError;
     }
-    return successfulLogin;
+    return loginPageState;
   }
 }
