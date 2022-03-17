@@ -9,5 +9,6 @@ class LoginPageController extends ValueNotifier<LoginPageState> {
 
   final VerifyLoginUseCase verifyLoginUseCase;
 
-  LoginPageState login() => value = verifyLoginUseCase.verify();
+  LoginPageState doLogin(String userEmail, String userPassword) =>
+      value = verifyLoginUseCase.call(userEmail, userPassword);
 }

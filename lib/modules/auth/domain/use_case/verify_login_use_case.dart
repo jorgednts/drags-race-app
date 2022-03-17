@@ -1,28 +1,22 @@
-import 'package:drags_race_app/modules/auth/presentation/page/login_page_state.dart';
+import '../../presentation/page/login_page_state.dart';
 
-abstract class VerifyLoginUseCase {
-  LoginPageState verify();
+mixin VerifyLoginUseCase {
+  LoginPageState call(String userEmail, String userPassword);
 }
 
 class VerifyLoginUseCaseImpl implements VerifyLoginUseCase {
-  VerifyLoginUseCaseImpl({
-    required this.userEmail,
-    required this.userPassword,
-  });
-
-  final String userEmail;
-  final String userPassword;
+  static const String standardEmail = 'user@dragsrace.com';
+  static const String standardPassword = 'ornacia123';
 
   @override
-  LoginPageState verify() {
-    LoginPageState loginPageState;
-    if(userEmail == 'user@dragsrace.com' && userPassword == 'ornacia123'){
-      loginPageState = LoginPageState.successLogin;
-    }if(userEmail.isEmpty || userPassword.isEmpty){
-      loginPageState = LoginPageState.initialState;
-    }else{
-      loginPageState = LoginPageState.credentialError;
+  LoginPageState call(String userEmail, String userPassword) {
+    if (userEmail.isEmpty && userPassword.isEmpty) {
+      return LoginPageState.initialState;
     }
-    return loginPageState;
+    if (userEmail == standardEmail && userPassword == standardPassword) {
+      return LoginPageState.successLogin;
+    } else {
+      return LoginPageState.credentialError;
+    }
   }
 }
