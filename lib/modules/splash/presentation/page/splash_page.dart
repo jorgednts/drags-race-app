@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../queens/constants/queen_constants_images.dart';
+import '../../constants/splash_constants_images.dart';
 import '../controller/splash_controller.dart';
 
 class SplashPage extends StatefulWidget {
@@ -30,7 +30,7 @@ class _SplashPageState extends State<SplashPage> {
               Padding(
                 padding: const EdgeInsets.all(15),
                 child: Image.asset(
-                  QueenConstantsImages.splashLogo,
+                  SplashConstantsImages.splashLogo,
                   color: Colors.pink[300],
                 ),
               ),
