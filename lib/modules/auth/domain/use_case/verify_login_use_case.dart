@@ -3,14 +3,6 @@ abstract class VerifyLoginUseCase {
 }
 
 class VerifyLoginUseCaseImpl implements VerifyLoginUseCase {
-  VerifyLoginUseCaseImpl({
-    required this.userEmail,
-    required this.userPassword,
-  });
-
-  final String userEmail;
-  final String userPassword;
-
   @override
   bool verify(String email, String password) {
     final bool successfulLogin;
