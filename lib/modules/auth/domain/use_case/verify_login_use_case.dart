@@ -1,12 +1,20 @@
 abstract class VerifyLoginUseCase {
-  bool verify(String email, String password);
+  bool verify();
 }
 
 class VerifyLoginUseCaseImpl implements VerifyLoginUseCase {
+  VerifyLoginUseCaseImpl({
+    required this.userEmail,
+    required this.userPassword,
+  });
+
+  final String userEmail;
+  final String userPassword;
+
   @override
-  bool verify(String email, String password) {
+  bool verify() {
     final bool successfulLogin;
-    if(email == 'user@dragsrace.com' && password == 'ornacia123'){
+    if(userEmail == 'user@dragsrace.com' && userPassword == 'ornacia123'){
       successfulLogin = true;
     }else{
       successfulLogin = false;
