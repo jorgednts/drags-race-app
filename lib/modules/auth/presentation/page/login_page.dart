@@ -25,29 +25,40 @@ class _LoginPageState extends State<LoginPage> {
   @override
   void initState() {
     super.initState();
-    verifyLoginUseCase = VerifyLoginUseCaseImpl(
-        userEmail: userEmail.toString(), userPassword: userPassword.toString());
+    verifyLoginUseCase = VerifyLoginUseCaseImpl();
     controller = LoginPageController(verifyLoginUseCase: verifyLoginUseCase);
     controller.value = LoginPageState.initialState;
   }
 
   Widget setInfoText(String infoText) => Container(
-          child: Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20),
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              child: Text(
-                infoText,
-                style: const TextStyle(
-                    fontSize: 18,
-                    color: DragRaceConstantsColors.secondaryColor,
-                    fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.center,
+        child: Padding(
+          padding: const EdgeInsets.only(left: 20, right: 20),
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            child: Text(
+              infoText,
+              style: const TextStyle(
+                fontSize: 18,
+                color: DragRaceConstantsColors.secondaryColor,
+                fontWeight: FontWeight.bold,
               ),
+              textAlign: TextAlign.center,
             ),
           ),
+        ),
       );
+
+  Future<void> goToSearchQueenPage(BuildContext context) async {
+    await Future.delayed(
+      const Duration(seconds: 2),
+    );
+    await Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const SearchQueenPage(),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -111,6 +122,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                         CustomTextFieldWidget(
+                          obscureText: true,
                           textEditingController: userPassword,
                           hintText: S.of(context).loginPagePasswordHintText,
                         ),
@@ -127,10 +139,10 @@ class _LoginPageState extends State<LoginPage> {
                           primary: DragRaceConstantsColors.secondaryColor,
                         ),
                         onPressed: () {
-                          controller.login();
+                          controller.doLogin(userEmail.text.toString(),
+                              userPassword.text.toString());
                           if (controller.value == LoginPageState.successLogin) {
-                            MaterialPageRoute(
-                                builder: (context) => const SearchQueenPage());
+                            goToSearchQueenPage(context);
                           }
                         },
                         child: Text(
