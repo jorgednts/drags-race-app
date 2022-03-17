@@ -49,6 +49,36 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `e-mail`
+  String get loginPageEmailHintText {
+    return Intl.message(
+      'e-mail',
+      name: 'loginPageEmailHintText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `password`
+  String get loginPagePasswordHintText {
+    return Intl.message(
+      'password',
+      name: 'loginPagePasswordHintText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login`
+  String get loginPageElevatedButtonText {
+    return Intl.message(
+      'Login',
+      name: 'loginPageElevatedButtonText',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

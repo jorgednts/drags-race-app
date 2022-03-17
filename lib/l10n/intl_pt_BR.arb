@@ -1,3 +1,6 @@
 {
-  "@@locale": "pt_BR"
+  "@@locale": "pt_BR",
+  "loginPageEmailHintText": "e-mail",
+  "loginPagePasswordHintText": "senha",
+  "loginPageElevatedButtonText": "Fazer Login"
 }
