@@ -32,12 +32,21 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget setInfoText(String infoText) => Container(
-        child: Text(
-          infoText,
-          style: const TextStyle(
-              fontSize: 15,
-              color: DragRaceConstantsColors.secondaryColor),
-        ),
+          child: Padding(
+            padding: const EdgeInsets.only(left: 20, right: 20),
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              child: Text(
+                infoText,
+                style: const TextStyle(
+                    fontSize: 18,
+                    color: DragRaceConstantsColors.secondaryColor,
+                    fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ),
       );
 
   @override
@@ -138,11 +147,16 @@ class _LoginPageState extends State<LoginPage> {
                         builder: (context, state, _) {
                           switch (state) {
                             case LoginPageState.initialState:
-                              return setInfoText('Digite suas credenciais');
+                              return setInfoText(
+                                  S.of(context).loginPageInitialInfoText);
                             case LoginPageState.credentialError:
-                              return setInfoText('Credenciais Inválidas');
+                              return setInfoText(S
+                                  .of(context)
+                                  .loginPageInvalidCredentialsInfoText);
                             case LoginPageState.successLogin:
-                              return setInfoText('Sucesso');
+                              return setInfoText(S
+                                  .of(context)
+                                  .loginPageSuccessfulLoginInfoText);
                           }
                         }),
                   )
