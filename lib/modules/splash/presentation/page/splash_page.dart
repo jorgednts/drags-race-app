@@ -28,7 +28,7 @@ class _SplashPageState extends State<SplashPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.all(15),
+                padding: const EdgeInsets.all(18),
                 child: Image.asset(
                   SplashConstantsImages.splashLogo,
                   color: Colors.pink[300],
