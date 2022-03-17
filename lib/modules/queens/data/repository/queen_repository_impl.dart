@@ -17,10 +17,10 @@ class QueenRepositoryImpl implements QueenRepository {
   }
 
   @override
-  Future<QueenDetailsModel> getQueenByID(int queenID) =>
+  Future<QueenDetailsModel> getQueenByID(int queenID) async =>
       _dragsRaceRemoteDataSource.getQueenByID(queenID);
 
   @override
-  Future<QueenDetailsModel> getQueenByName(String queenName) =>
+  Future<QueenDetailsModel> getQueenByName(String queenName) async =>
       _dragsRaceRemoteDataSource.getQueenByName(queenName);
 }

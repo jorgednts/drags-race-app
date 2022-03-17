@@ -13,15 +13,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: "RuPaul's Drags Race App",
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: const SplashPage(),
     localizationsDelegates: const [
-      // 1
       S.delegate,
-      // 2
       GlobalMaterialLocalizations.delegate,
       GlobalWidgetsLocalizations.delegate,
       GlobalCupertinoLocalizations.delegate,
