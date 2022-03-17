@@ -1,6 +1,7 @@
-import 'package:drags_race_app/modules/auth/constants/login_page_image_constants.dart';
-import 'package:drags_race_app/modules/drag_race_constants/drag_race_constants_colors.dart';
 import 'package:flutter/material.dart';
+
+import '../../../drag_race_constants/drag_race_constants_colors.dart';
+import '../../constants/login_page_image_constants.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -41,8 +42,11 @@ class _LoginPageState extends State<LoginPage> {
                   child: Padding(
                     padding: EdgeInsets.all(15),
                     child: TextField(
-                      decoration: InputDecoration(hintText: 'e-mail'),
-
+                      decoration: InputDecoration(
+                        hintText: 'e-mail',
+                        hintStyle: TextStyle(
+                            color: DragRaceConstantsColors.hintTextColor),
+                      ),
                     ),
                   ),
                 ),
