@@ -22,7 +22,7 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        backgroundColor: DragRaceConstantsColors.dragRacePrimaryColor,
+        backgroundColor: DragRaceConstantsColors.primaryColor,
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -32,7 +32,7 @@ class _SplashPageState extends State<SplashPage> {
                 padding: const EdgeInsets.all(25),
                 child: Image.asset(
                   SplashConstantsImages.splashLogo,
-                  color: DragRaceConstantsColors.dragRaceSecondaryColor,
+                  color: DragRaceConstantsColors.secondaryColor,
                 ),
               ),
             ],
