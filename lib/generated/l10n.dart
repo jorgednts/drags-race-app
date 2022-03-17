@@ -79,6 +79,16 @@ class S {
       args: [],
     );
   }
+
+  /// `WRONG CREDENTIALS, TRY AGAIN!`
+  String get loginPageSnackBarText {
+    return Intl.message(
+      'WRONG CREDENTIALS, TRY AGAIN!',
+      name: 'loginPageSnackBarText',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

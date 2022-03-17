@@ -27,6 +27,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginPageEmailHintText":
             MessageLookupByLibrary.simpleMessage("e-mail"),
         "loginPagePasswordHintText":
-            MessageLookupByLibrary.simpleMessage("senha")
+            MessageLookupByLibrary.simpleMessage("senha"),
+        "loginPageSnackBarText": MessageLookupByLibrary.simpleMessage(
+            "CREDENCIAIS INCORRETAS, TENTE NOVAMENTE!")
       };
 }

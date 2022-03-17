@@ -2,5 +2,6 @@
   "@@locale": "en_US",
   "loginPageEmailHintText": "e-mail",
   "loginPagePasswordHintText": "password",
-  "loginPageElevatedButtonText": "Login"
+  "loginPageElevatedButtonText": "Login",
+  "loginPageSnackBarText": "WRONG CREDENTIALS, TRY AGAIN!"
 }

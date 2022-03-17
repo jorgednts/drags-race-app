@@ -2,5 +2,6 @@
   "@@locale": "pt_BR",
   "loginPageEmailHintText": "e-mail",
   "loginPagePasswordHintText": "senha",
-  "loginPageElevatedButtonText": "Fazer Login"
+  "loginPageElevatedButtonText": "Fazer Login",
+  "loginPageSnackBarText": "CREDENCIAIS INCORRETAS, TENTE NOVAMENTE!"
 }
