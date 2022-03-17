@@ -13,6 +13,6 @@ class GetQueenByIdUseCaseImpl implements GetQueenByIdUseCase {
   final QueenRepository _queenRepository;
 
   @override
-  Future<QueenDetailsModel> call(int queenID) =>
+  Future<QueenDetailsModel> call(int queenID) async =>
       _queenRepository.getQueenByID(queenID);
 }

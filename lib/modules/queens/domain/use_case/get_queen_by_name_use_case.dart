@@ -13,6 +13,6 @@ class GetQueenByNameUseCaseImpl implements GetQueenByNameUseCase {
   final QueenRepository _queenRepository;
 
   @override
-  Future<QueenDetailsModel> call(String queenName) =>
+  Future<QueenDetailsModel> call(String queenName) async =>
       _queenRepository.getQueenByName(queenName);
 }
