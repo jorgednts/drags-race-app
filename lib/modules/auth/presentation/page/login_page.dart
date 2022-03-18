@@ -52,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
     await Future.delayed(
       const Duration(seconds: 2),
     );
-    await Navigator.pushReplacement(
+    await Navigator.push(
       context,
       MaterialPageRoute(
         builder: (context) => const SearchQueenPage(),
