@@ -23,10 +23,9 @@ class DragsRaceRemoteDataSourceImpl implements DragsRaceRemoteDataSource {
     try {
       final response =
           await _dio.get('${QueensConstantsUrlApi.queenBaseUrl}/all/');
-      final List<QueenResponse> queensResponseList = response.data
-          .map(QueenResponse.fromJson)
-          .toList()
-          .cast<QueenResponse>();
+      final List<QueenResponse> queensResponseList =
+          (response.data.map((item) => QueenResponse.fromJson(item)).toList())
+              .cast<QueenResponse>();
       return queensResponseList.toQueenListModel();
     } on DioError catch (dioError, _) {
       if (dioError.type == DioErrorType.response) {
