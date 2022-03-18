@@ -1,8 +1,8 @@
+import 'package:drags_race_app/modules/queens/presentation/page/queen_list_page.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../generated/l10n.dart';
 import '../../../drag_race_constants/drag_race_constants_colors.dart';
-import '../../../queens/presentation/page/search_queen_page.dart';
 import '../../constants/login_page_image_constants.dart';
 import '../../domain/use_case/verify_login_use_case.dart';
 import '../common/custom_text_field_widget.dart';
@@ -48,14 +48,14 @@ class _LoginPageState extends State<LoginPage> {
         ),
       );
 
-  Future<void> goToSearchQueenPage(BuildContext context) async {
+  Future<void> goToQueenListPage(BuildContext context) async {
     await Future.delayed(
       const Duration(seconds: 2),
     );
     await Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => const SearchQueenPage(),
+        builder: (context) => const QueenListPage(),
       ),
     );
   }
@@ -142,7 +142,7 @@ class _LoginPageState extends State<LoginPage> {
                           controller.doLogin(userEmail.text.toString(),
                               userPassword.text.toString());
                           if (controller.value == LoginPageState.successLogin) {
-                            goToSearchQueenPage(context);
+                            goToQueenListPage(context);
                           }
                         },
                         child: Text(
