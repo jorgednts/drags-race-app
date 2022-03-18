@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../drag_race_constants/drag_race_constants_colors.dart';
 import '../../../../generated/l10n.dart';
+import '../../../drag_race_constants/drag_race_constants_colors.dart';
 
 class SearchQueenPage extends StatefulWidget {
   const SearchQueenPage({Key? key}) : super(key: key);
@@ -11,12 +11,14 @@ class SearchQueenPage extends StatefulWidget {
 }
 
 class _SearchQueenPageState extends State<SearchQueenPage> {
+  static const String appBarTitle = "RuPaul's Drag Race App";
+
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
           backgroundColor: DragRaceConstantsColors.primaryColor,
           title: const Text(
-            "RuPaul's Drag Race App",
+            appBarTitle,
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
           centerTitle: true,
@@ -25,37 +27,50 @@ class _SearchQueenPageState extends State<SearchQueenPage> {
           child: Center(
             child: Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 280,
-                      child: const TextField(
-                        decoration: InputDecoration(
-                          contentPadding: EdgeInsets.only(left: 10),
-                          hintStyle: TextStyle(
-                              color: DragRaceConstantsColors.hintTextColor),
-                          border: UnderlineInputBorder(),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: 280,
+                        child: TextField(
+                          decoration: InputDecoration(
+                            hintText: S.of(context).searchQueenPageHintText,
+                            contentPadding: const EdgeInsets.only(left: 20),
+                            hintStyle: const TextStyle(
+                                color: Colors.grey),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(50),
+                              borderSide: const BorderSide(
+                                color: DragRaceConstantsColors.secondaryColor,
+                              ),
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 15),
-                      child: Icon(
-                        Icons.search_rounded,
-                        color: DragRaceConstantsColors.secondaryColor,
+                      const Padding(
+                        padding: EdgeInsets.only(left: 15),
+                        child: Icon(
+                          Icons.search_rounded,
+                          color: DragRaceConstantsColors.secondaryColor,
+                          size: 35,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 100),
+                  padding: const EdgeInsets.only(top: 200),
                   child: Container(
                       width: 300,
                       child: Text(
                         S.of(context).searchQueenPageInfoText,
                         style: const TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                            color: DragRaceConstantsColors.primaryColor),
+                        textAlign: TextAlign.center,
                       )),
                 )
               ],
