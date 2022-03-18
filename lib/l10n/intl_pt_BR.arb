@@ -7,5 +7,6 @@
   "loginPageInitialInfoText": "DIGITE SUAS CREDENCIAIS",
   "loginPageInvalidCredentialsInfoText": "OOH GIRL, CREDENCIAIS INCORRETAS, TENTE NOVAMENTE!",
   "loginPageSuccessfulLoginInfoText": "LIGUEM SEUS MOTORES!",
-  "searchQueenPageInfoText": "DIGITE PARA INICIAR A BUSCA POR UMA QUEEN"
+  "searchQueenPageInfoText": "DIGITE PARA INICIAR A BUSCA POR UMA QUEEN",
+  "searchQueenPageHintText": "Buscar Queen"
 }

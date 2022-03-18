@@ -7,5 +7,6 @@
   "loginPageInitialInfoText": "TYPE YOUR CREDENTIALS",
   "loginPageInvalidCredentialsInfoText": "OOH GIRL, INVALID CREDENTIALS, TRY AGAIN!",
   "loginPageSuccessfulLoginInfoText": "START YOUR ENGINES!",
-  "searchQueenPageInfoText": "TYPE TO START YOUR QUEEN SEARCH"
+  "searchQueenPageInfoText": "TYPE TO START YOUR QUEEN SEARCH",
+  "searchQueenPageHintText": "Search Queen"
 }

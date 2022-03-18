@@ -37,6 +37,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "CREDENCIAIS INCORRETAS, TENTE NOVAMENTE!"),
         "loginPageSuccessfulLoginInfoText":
             MessageLookupByLibrary.simpleMessage("LIGUEM SEUS MOTORES!"),
+        "searchQueenPageHintText":
+            MessageLookupByLibrary.simpleMessage("Buscar Queen"),
         "searchQueenPageInfoText": MessageLookupByLibrary.simpleMessage(
             "DIGITE PARA INICIAR A BUSCA POR UMA QUEEN")
       };

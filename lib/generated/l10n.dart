@@ -129,6 +129,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Search Queen`
+  String get searchQueenPageHintText {
+    return Intl.message(
+      'Search Queen',
+      name: 'searchQueenPageHintText',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
