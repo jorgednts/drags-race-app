@@ -9,8 +9,7 @@ import '../page/queen_list_page_state.dart';
 class QueenListPageController extends ValueNotifier<QueenListPageState> {
   QueenListPageController({
     required GetAllQueensUseCase getAllQueensUseCase,
-  })
-      : _getAllQueensUseCase = getAllQueensUseCase,
+  })  : _getAllQueensUseCase = getAllQueensUseCase,
         super(QueenListPageState.loading);
 
   final GetAllQueensUseCase _getAllQueensUseCase;
@@ -23,7 +22,7 @@ class QueenListPageController extends ValueNotifier<QueenListPageState> {
       final queens = await _getAllQueensUseCase.call();
       queenList.addAll(queens);
       value = QueenListPageState.successQueenList;
-    }on GenericErrorStatusCodeException {
+    } on GenericErrorStatusCodeException {
       value = QueenListPageState.genericError;
     } on NetworkErrorException {
       value = QueenListPageState.networkError;
