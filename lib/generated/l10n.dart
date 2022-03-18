@@ -120,16 +120,6 @@ class S {
     );
   }
 
-  /// `RuPaul's Drag Race App`
-  String get queenListPageAppBarTitle {
-    return Intl.message(
-      'RuPaul\'s Drag Race App',
-      name: 'queenListPageAppBarTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `TYPE TO START YOUR QUEEN SEARCH`
   String get searchQueenPageInfoText {
     return Intl.message(

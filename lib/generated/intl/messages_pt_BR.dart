@@ -37,8 +37,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "CREDENCIAIS INCORRETAS, TENTE NOVAMENTE!"),
         "loginPageSuccessfulLoginInfoText":
             MessageLookupByLibrary.simpleMessage("LIGUEM SEUS MOTORES!"),
-        "queenListPageAppBarTitle":
-            MessageLookupByLibrary.simpleMessage("RuPaul\'s Drag Race App"),
         "searchQueenPageHintText":
             MessageLookupByLibrary.simpleMessage("Buscar Queen"),
         "searchQueenPageInfoText": MessageLookupByLibrary.simpleMessage(
