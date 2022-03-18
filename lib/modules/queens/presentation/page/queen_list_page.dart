@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:drags_race_app/modules/queens/presentation/common/queen_card_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../generated/l10n.dart';
@@ -77,15 +78,17 @@ class _QueenListPageState extends State<QueenListPage> {
           builder: (context, state, _) {
             switch (state) {
               case QueenListPageState.loading:
-                return Padding(
-                  padding: const EdgeInsets.only(top: 100),
+                return Center(
                   child: Container(
-                    height: 50,
-                    width: 50,
+                    alignment: Alignment.center,
+                    height: 80,
+                    width: 80,
                     child: const Center(
                       child: Padding(
                         padding: EdgeInsets.only(top: 15),
-                        child: CircularProgressIndicator(),
+                        child: CircularProgressIndicator(
+                          color: DragRaceConstantsColors.primaryColor,
+                        ),
                       ),
                     ),
                   ),
@@ -93,21 +96,28 @@ class _QueenListPageState extends State<QueenListPage> {
               case QueenListPageState.successQueenList:
                 return SingleChildScrollView(
                   child: Center(
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 20, right: 20),
-                          child: Container(
+                    child: Padding(
+                      padding:
+                          const EdgeInsets.only(top: 15, left: 20, right: 20),
+                      child: Column(
+                        children: [
+                          Container(
                             height: MediaQuery.of(context).size.height,
-                            child: ListView.builder(
+                            child: GridView.builder(
                               shrinkWrap: true,
                               itemCount: controller.queenList.length,
-                              itemBuilder: (context, index) =>
-                                  const Text('Item'),
+                              itemBuilder: (context, index) => QueenCardWidget(
+                                  queen: controller.queenList[index]),
+                              gridDelegate:
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
+                                      mainAxisExtent: 320,
+                                      mainAxisSpacing: 5,
+                                      crossAxisSpacing: 5,
+                                      crossAxisCount: 2),
                             ),
-                          ),
-                        )
-                      ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 );
