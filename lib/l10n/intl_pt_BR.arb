@@ -7,6 +7,7 @@
   "loginPageInitialInfoText": "DIGITE SUAS CREDENCIAIS",
   "loginPageInvalidCredentialsInfoText": "OOH GIRL, CREDENCIAIS INCORRETAS, TENTE NOVAMENTE!",
   "loginPageSuccessfulLoginInfoText": "LIGUEM SEUS MOTORES!",
+  "queenListPageAppBarTitle": "RuPaul's Drag Race App",
   "searchQueenPageInfoText": "DIGITE PARA INICIAR A BUSCA POR UMA QUEEN",
   "searchQueenPageHintText": "Buscar Queen"
 }
