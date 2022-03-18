@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../drag_race_constants/drag_race_constants_colors.dart';
-import '../../../drag_race_constants/drag_race_constants_strings.dart';
+import '../../../common/drag_race_constants/drag_race_constants_colors.dart';
+import '../../../common/drag_race_constants/drag_race_constants_strings.dart';
 import 'search_queen_page.dart';
 
 class QueenListPage extends StatefulWidget {
