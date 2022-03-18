@@ -119,6 +119,16 @@ class S {
       args: [],
     );
   }
+
+  /// `TYPE TO START YOUR QUEEN SEARCH`
+  String get searchQueenPageInfoText {
+    return Intl.message(
+      'TYPE TO START YOUR QUEEN SEARCH',
+      name: 'searchQueenPageInfoText',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

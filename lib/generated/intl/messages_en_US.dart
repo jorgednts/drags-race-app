@@ -36,6 +36,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginPageSnackBarText": MessageLookupByLibrary.simpleMessage(
             "WRONG CREDENTIALS, TRY AGAIN!"),
         "loginPageSuccessfulLoginInfoText":
-            MessageLookupByLibrary.simpleMessage("START YOUR ENGINES!")
+            MessageLookupByLibrary.simpleMessage("START YOUR ENGINES!"),
+        "searchQueenPageInfoText": MessageLookupByLibrary.simpleMessage(
+            "TYPE TO START YOUR QUEEN SEARCH")
       };
 }
