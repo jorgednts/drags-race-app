@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../generated/l10n.dart';
-import '../../../drag_race_constants/drag_race_constants_colors.dart';
+import '../../../common/drag_race_constants/drag_race_constants_colors.dart';
 import '../../../queens/presentation/page/queen_list_page.dart';
 import '../../constants/login_page_image_constants.dart';
 import '../../domain/use_case/verify_login_use_case.dart';
