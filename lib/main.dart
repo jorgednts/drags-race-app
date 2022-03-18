@@ -1,10 +1,11 @@
-import 'package:drags_race_app/modules/drag_race_constants/drag_race_constants_colors.dart';
-import 'package:drags_race_app/modules/drag_race_constants/drag_race_constants_fonts.dart';
-import 'package:drags_race_app/modules/splash/presentation/page/splash_page.dart';
+
+import 'package:drags_race_app/modules/common/drag_race_constants/drag_race_constants_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'generated/l10n.dart';
+import 'modules/common/drag_race_constants/drag_race_constants_fonts.dart';
+import 'modules/splash/presentation/page/splash_page.dart';
 
 void main() {
   runApp(const MyApp());
