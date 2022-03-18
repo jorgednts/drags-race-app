@@ -12,7 +12,6 @@ class QueenListPage extends StatefulWidget {
 }
 
 class _QueenListPageState extends State<QueenListPage> {
-
   void goToSearchQueenPage(BuildContext context) {
     Navigator.push(
       context,
@@ -45,6 +44,27 @@ class _QueenListPageState extends State<QueenListPage> {
               },
             ),
           ],
+        ),
+        body: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 20, right: 20),
+                  child: Container(
+                    height: MediaQuery.of(context).size.height,
+                    child: ListView.builder(
+                        itemCount: 3,
+                        itemBuilder: (context, index){
+                          return Text('Item');
+
+
+                        }),
+                  ),
+                )
+              ],
+            ),
+          ),
         ),
       );
 }
