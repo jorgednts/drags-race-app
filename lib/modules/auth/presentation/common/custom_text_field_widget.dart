@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../drag_race_constants/drag_race_constants_colors.dart';
+import '../../../common/drag_race_constants/drag_race_constants_colors.dart';
 
 class CustomTextFieldWidget extends StatelessWidget {
   const CustomTextFieldWidget({
