@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../%20common/drag_race_constants/drag_race_constants_colors.dart';
+import '../../../common/drag_race_constants/drag_race_constants_colors.dart';
 import '../../constants/splash_constants_images.dart';
 import '../controller/splash_controller.dart';
 
