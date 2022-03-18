@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../generated/l10n.dart';
 import '../../../common/drag_race_constants/drag_race_constants_colors.dart';
 import '../../../common/drag_race_constants/drag_race_constants_strings.dart';
 import '../../data/remote/data_source/drags_race_remote_data_source.dart';
@@ -11,7 +12,6 @@ import '../../external/remote_data_source/drags_race_remote_data_source_impl.dar
 import '../controller/queen_list_page_controller.dart';
 import 'queen_list_page_state.dart';
 import 'search_queen_page.dart';
-import '../../../../generated/l10n.dart';
 
 class QueenListPage extends StatefulWidget {
   const QueenListPage({Key? key}) : super(key: key);
