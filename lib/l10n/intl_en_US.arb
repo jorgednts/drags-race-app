@@ -8,5 +8,7 @@
   "loginPageInvalidCredentialsInfoText": "OOH GIRL, INVALID CREDENTIALS, TRY AGAIN!",
   "loginPageSuccessfulLoginInfoText": "START YOUR ENGINES!",
   "searchQueenPageInfoText": "TYPE TO START YOUR QUEEN SEARCH",
-  "searchQueenPageHintText": "Search Queen"
+  "searchQueenPageHintText": "Search Queen",
+  "queenListPageGenericErrorText": "AN ERROR HAS OCCURRED :(",
+  "queenListPageNetworkErrorText": "NETWORK ERROR :("
 }

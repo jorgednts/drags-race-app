@@ -139,6 +139,26 @@ class S {
       args: [],
     );
   }
+
+  /// `AN ERROR HAS OCCURRED :(`
+  String get queenListPageGenericErrorText {
+    return Intl.message(
+      'AN ERROR HAS OCCURRED :(',
+      name: 'queenListPageGenericErrorText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `NETWORK ERROR :(`
+  String get queenListPageNetworkErrorText {
+    return Intl.message(
+      'NETWORK ERROR :(',
+      name: 'queenListPageNetworkErrorText',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

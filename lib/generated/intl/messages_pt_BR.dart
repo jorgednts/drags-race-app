@@ -37,6 +37,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "CREDENCIAIS INCORRETAS, TENTE NOVAMENTE!"),
         "loginPageSuccessfulLoginInfoText":
             MessageLookupByLibrary.simpleMessage("LIGUEM SEUS MOTORES!"),
+        "queenListPageGenericErrorText":
+            MessageLookupByLibrary.simpleMessage("OCORREU UM ERRO :("),
+        "queenListPageNetworkErrorText":
+            MessageLookupByLibrary.simpleMessage("ERRO DE INTERNET :("),
         "searchQueenPageHintText":
             MessageLookupByLibrary.simpleMessage("Buscar Queen"),
         "searchQueenPageInfoText": MessageLookupByLibrary.simpleMessage(
