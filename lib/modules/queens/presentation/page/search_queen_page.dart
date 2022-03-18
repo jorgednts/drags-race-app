@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../generated/l10n.dart';
 import '../../../drag_race_constants/drag_race_constants_colors.dart';
+import '../../../drag_race_constants/drag_race_constants_strings.dart';
 
 class SearchQueenPage extends StatefulWidget {
   const SearchQueenPage({Key? key}) : super(key: key);
@@ -11,14 +12,12 @@ class SearchQueenPage extends StatefulWidget {
 }
 
 class _SearchQueenPageState extends State<SearchQueenPage> {
-  static const String appBarTitle = "RuPaul's Drag Race App";
-
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
           backgroundColor: DragRaceConstantsColors.primaryColor,
           title: const Text(
-            appBarTitle,
+            DragRaceConstantsStrings.appBarTitle,
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
           centerTitle: true,
