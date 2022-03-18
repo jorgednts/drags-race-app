@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:drags_race_app/modules/queens/presentation/common/queen_card_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../generated/l10n.dart';
@@ -10,6 +9,7 @@ import '../../data/repository/queen_repository_impl.dart';
 import '../../domain/repository/queen_repository.dart';
 import '../../domain/use_case/get_all_queens_use_case.dart';
 import '../../external/remote_data_source/drags_race_remote_data_source_impl.dart';
+import '../common/queen_list_widget.dart';
 import '../controller/queen_list_page_controller.dart';
 import 'queen_list_page_state.dart';
 import 'search_queen_page.dart';
@@ -101,21 +101,7 @@ class _QueenListPageState extends State<QueenListPage> {
                           const EdgeInsets.only(top: 15, left: 20, right: 20),
                       child: Column(
                         children: [
-                          Container(
-                            height: MediaQuery.of(context).size.height,
-                            child: GridView.builder(
-                              shrinkWrap: true,
-                              itemCount: controller.queenList.length,
-                              itemBuilder: (context, index) => QueenCardWidget(
-                                  queen: controller.queenList[index]),
-                              gridDelegate:
-                                  const SliverGridDelegateWithFixedCrossAxisCount(
-                                      mainAxisExtent: 320,
-                                      mainAxisSpacing: 5,
-                                      crossAxisSpacing: 5,
-                                      crossAxisCount: 2),
-                            ),
-                          )
+                          QueenListWidget(controller: controller),
                         ],
                       ),
                     ),
