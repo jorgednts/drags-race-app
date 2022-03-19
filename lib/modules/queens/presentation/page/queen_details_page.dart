@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:drags_race_app/modules/queens/presentation/common/circular_progress_indicator.dart';
+import 'package:drags_race_app/modules/queens/presentation/common/circular_progress_indicator_widget.dart';
+import 'package:drags_race_app/modules/queens/presentation/common/error_text_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../../common/drag_race_constants/drag_race_constants_colors.dart';
@@ -10,6 +11,7 @@ import '../../domain/use_case/get_queen_by_id_use_case.dart';
 import '../../external/remote_data_source/drags_race_remote_data_source_impl.dart';
 import '../controller/queen_details_controller.dart';
 import 'queen_details_page_state.dart';
+import '../../../../generated/l10n.dart';
 
 class QueenDetailsPage extends StatefulWidget {
   const QueenDetailsPage({
@@ -77,17 +79,13 @@ class _QueenDetailsPageState extends State<QueenDetailsPage> {
                           return Center(
                             child: Text('1'),
                           );
-                        case QueenDetailsPageState.notFoundQueenError:
-                          return Center(
-                            child: Text('Não encontrado'),
-                          );
                         case QueenDetailsPageState.genericError:
-                          return Center(
-                            child: Text('erro'),
+                          return ErrorTextWidget(
+                            errorText: S.of(context).genericErrorText,
                           );
                         case QueenDetailsPageState.networkError:
-                          return Center(
-                            child: Text('erro de internet'),
+                          return ErrorTextWidget(
+                            errorText: S.of(context).networkErrorText,
                           );
                       }
                     }),

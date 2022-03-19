@@ -97,11 +97,11 @@ class _QueenListPageState extends State<QueenListPage> {
                 );
               case QueenListPageState.genericError:
                 return ErrorTextWidget(
-                  errorText: S.of(context).queenListPageGenericErrorText,
+                  errorText: S.of(context).genericErrorText,
                 );
               case QueenListPageState.networkError:
                 return ErrorTextWidget(
-                  errorText: S.of(context).queenListPageNetworkErrorText,
+                  errorText: S.of(context).networkErrorText,
                 );
             }
           },

@@ -21,8 +21,6 @@ class QueenDetailsController extends ValueNotifier<QueenDetailsPageState> {
     try {
       queen = await _getQueenByIdUseCase.call(queenID);
       value = QueenDetailsPageState.successQueenList;
-    } on NotFoundQueenException {
-      value = QueenDetailsPageState.notFoundQueenError;
     } on GenericErrorStatusCodeException {
       value = QueenDetailsPageState.genericError;
     } on NetworkErrorException {
