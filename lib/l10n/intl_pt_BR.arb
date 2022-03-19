@@ -9,6 +9,7 @@
   "loginPageSuccessfulLoginInfoText": "LIGUEM SEUS MOTORES!",
   "searchQueenPageInfoText": "DIGITE PARA INICIAR A BUSCA POR UMA QUEEN",
   "searchQueenPageHintText": "Buscar Queen",
-  "queenListPageGenericErrorText": "OCORREU UM ERRO :(",
-  "queenListPageNetworkErrorText": "ERRO DE INTERNET :("
+  "genericErrorText": "OCORREU UM ERRO :(",
+  "networkErrorText": "ERRO DE INTERNET :(",
+  "notFoundErrorText": "QUEEN NÃO ENCONTRADA :O"
 }

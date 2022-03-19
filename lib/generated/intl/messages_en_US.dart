@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "genericErrorText":
+            MessageLookupByLibrary.simpleMessage("AN ERROR HAS OCCURRED :("),
         "loginPageElevatedButtonText":
             MessageLookupByLibrary.simpleMessage("Login"),
         "loginPageEmailHintText":
@@ -37,10 +39,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "WRONG CREDENTIALS, TRY AGAIN!"),
         "loginPageSuccessfulLoginInfoText":
             MessageLookupByLibrary.simpleMessage("START YOUR ENGINES!"),
-        "queenListPageGenericErrorText":
-            MessageLookupByLibrary.simpleMessage("AN ERROR HAS OCCURRED :("),
-        "queenListPageNetworkErrorText":
+        "networkErrorText":
             MessageLookupByLibrary.simpleMessage("NETWORK ERROR :("),
+        "notFoundErrorText":
+            MessageLookupByLibrary.simpleMessage("QUEEN NOT FOUND :O"),
         "searchQueenPageHintText":
             MessageLookupByLibrary.simpleMessage("Search Queen"),
         "searchQueenPageInfoText": MessageLookupByLibrary.simpleMessage(

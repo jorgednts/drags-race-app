@@ -9,6 +9,7 @@
   "loginPageSuccessfulLoginInfoText": "START YOUR ENGINES!",
   "searchQueenPageInfoText": "TYPE TO START YOUR QUEEN SEARCH",
   "searchQueenPageHintText": "Search Queen",
-  "queenListPageGenericErrorText": "AN ERROR HAS OCCURRED :(",
-  "queenListPageNetworkErrorText": "NETWORK ERROR :("
+  "genericErrorText": "AN ERROR HAS OCCURRED :(",
+  "networkErrorText": "NETWORK ERROR :(",
+  "notFoundErrorText": "QUEEN NOT FOUND :O"
 }

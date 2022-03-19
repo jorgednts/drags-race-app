@@ -141,20 +141,30 @@ class S {
   }
 
   /// `AN ERROR HAS OCCURRED :(`
-  String get queenListPageGenericErrorText {
+  String get genericErrorText {
     return Intl.message(
       'AN ERROR HAS OCCURRED :(',
-      name: 'queenListPageGenericErrorText',
+      name: 'genericErrorText',
       desc: '',
       args: [],
     );
   }
 
   /// `NETWORK ERROR :(`
-  String get queenListPageNetworkErrorText {
+  String get networkErrorText {
     return Intl.message(
       'NETWORK ERROR :(',
-      name: 'queenListPageNetworkErrorText',
+      name: 'networkErrorText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `QUEEN NOT FOUND :O`
+  String get notFoundErrorText {
+    return Intl.message(
+      'QUEEN NOT FOUND :O',
+      name: 'notFoundErrorText',
       desc: '',
       args: [],
     );
