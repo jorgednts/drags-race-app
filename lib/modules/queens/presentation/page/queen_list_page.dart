@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:drags_race_app/modules/queens/presentation/common/error_text_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../generated/l10n.dart';
@@ -9,7 +10,7 @@ import '../../data/repository/queen_repository_impl.dart';
 import '../../domain/repository/queen_repository.dart';
 import '../../domain/use_case/get_all_queens_use_case.dart';
 import '../../external/remote_data_source/drags_race_remote_data_source_impl.dart';
-import '../common/circular_progress_indicator.dart';
+import '../common/circular_progress_indicator_widget.dart';
 import '../common/queen_list_widget.dart';
 import '../controller/queen_list_page_controller.dart';
 import 'queen_list_page_state.dart';
@@ -95,30 +96,15 @@ class _QueenListPageState extends State<QueenListPage> {
                   ),
                 );
               case QueenListPageState.genericError:
-                return Container(
-                  alignment: Alignment.center,
-                  child: Text(
-                    S.of(context).queenListPageGenericErrorText,
-                    style: const TextStyle(
-                        color: DragRaceConstantsColors.primaryColor,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 30),
-                  ),
+                return ErrorTextWidget(
+                  errorText: S.of(context).queenListPageGenericErrorText,
                 );
               case QueenListPageState.networkError:
-                return Container(
-                  alignment: Alignment.center,
-                  child: Text(
-                    S.of(context).queenListPageNetworkErrorText,
-                    style: const TextStyle(
-                        color: DragRaceConstantsColors.primaryColor,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 30),
-                  ),
+                return ErrorTextWidget(
+                  errorText: S.of(context).queenListPageNetworkErrorText,
                 );
             }
           },
         ),
       );
 }
-
