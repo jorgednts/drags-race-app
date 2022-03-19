@@ -9,6 +9,7 @@ import '../../data/repository/queen_repository_impl.dart';
 import '../../domain/repository/queen_repository.dart';
 import '../../domain/use_case/get_all_queens_use_case.dart';
 import '../../external/remote_data_source/drags_race_remote_data_source_impl.dart';
+import '../common/circular_progress_indicator.dart';
 import '../common/queen_list_widget.dart';
 import '../controller/queen_list_page_controller.dart';
 import 'queen_list_page_state.dart';
@@ -78,21 +79,7 @@ class _QueenListPageState extends State<QueenListPage> {
           builder: (context, state, _) {
             switch (state) {
               case QueenListPageState.loading:
-                return Center(
-                  child: Container(
-                    alignment: Alignment.center,
-                    height: 80,
-                    width: 80,
-                    child: const Center(
-                      child: Padding(
-                        padding: EdgeInsets.only(top: 15),
-                        child: CircularProgressIndicator(
-                          color: DragRaceConstantsColors.primaryColor,
-                        ),
-                      ),
-                    ),
-                  ),
-                );
+                return const CircularProgressIndicatorWidget();
               case QueenListPageState.successQueenList:
                 return SingleChildScrollView(
                   child: Center(
@@ -134,3 +121,4 @@ class _QueenListPageState extends State<QueenListPage> {
         ),
       );
 }
+
