@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:drags_race_app/modules/queens/presentation/common/queen_details_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../generated/l10n.dart';
@@ -76,9 +77,7 @@ class _QueenDetailsPageState extends State<QueenDetailsPage> {
                         case QueenDetailsPageState.loading:
                           return const CircularProgressIndicatorWidget();
                         case QueenDetailsPageState.successQueenList:
-                          return Center(
-                            child: Text('1'),
-                          );
+                          return QueenDetailsWidget(controller: controller);
                         case QueenDetailsPageState.genericError:
                           return ErrorTextWidget(
                             errorText: S.of(context).genericErrorText,
