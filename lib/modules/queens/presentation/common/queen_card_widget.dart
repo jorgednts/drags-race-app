@@ -47,9 +47,10 @@ class QueenCardWidget extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.only(top: 3),
                   height: 250,
+                  width: 160,
                   child: Image.network(
                     queen.imageUrl,
-                    fit: BoxFit.fitHeight,
+                    fit: BoxFit.fill,
                     loadingBuilder: (context, child, loadingProgress) {
                       if (loadingProgress == null) {
                         return child;
