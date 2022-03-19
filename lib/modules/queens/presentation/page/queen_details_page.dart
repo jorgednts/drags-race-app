@@ -1,17 +1,17 @@
 import 'package:dio/dio.dart';
-import 'package:drags_race_app/modules/queens/presentation/common/circular_progress_indicator_widget.dart';
-import 'package:drags_race_app/modules/queens/presentation/common/error_text_widget.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../generated/l10n.dart';
 import '../../../common/drag_race_constants/drag_race_constants_colors.dart';
 import '../../data/remote/data_source/drags_race_remote_data_source.dart';
 import '../../data/repository/queen_repository_impl.dart';
 import '../../domain/repository/queen_repository.dart';
 import '../../domain/use_case/get_queen_by_id_use_case.dart';
 import '../../external/remote_data_source/drags_race_remote_data_source_impl.dart';
+import '../common/circular_progress_indicator_widget.dart';
+import '../common/error_text_widget.dart';
 import '../controller/queen_details_controller.dart';
 import 'queen_details_page_state.dart';
-import '../../../../generated/l10n.dart';
 
 class QueenDetailsPage extends StatefulWidget {
   const QueenDetailsPage({
