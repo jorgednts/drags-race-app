@@ -43,6 +43,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ERRO DE INTERNET :("),
         "notFoundErrorText":
             MessageLookupByLibrary.simpleMessage("QUEEN NÃO ENCONTRADA :O"),
+        "queenDetailsID": MessageLookupByLibrary.simpleMessage("ID:"),
+        "queenDetailsName": MessageLookupByLibrary.simpleMessage("Nome:"),
+        "queenDetailsSeasons":
+            MessageLookupByLibrary.simpleMessage("Temporadas:"),
         "searchQueenPageHintText":
             MessageLookupByLibrary.simpleMessage("Buscar Queen"),
         "searchQueenPageInfoText": MessageLookupByLibrary.simpleMessage(

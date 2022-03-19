@@ -169,6 +169,36 @@ class S {
       args: [],
     );
   }
+
+  /// `ID:`
+  String get queenDetailsID {
+    return Intl.message(
+      'ID:',
+      name: 'queenDetailsID',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name:`
+  String get queenDetailsName {
+    return Intl.message(
+      'Name:',
+      name: 'queenDetailsName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Seasons:`
+  String get queenDetailsSeasons {
+    return Intl.message(
+      'Seasons:',
+      name: 'queenDetailsSeasons',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

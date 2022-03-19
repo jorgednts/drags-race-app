@@ -11,5 +11,8 @@
   "searchQueenPageHintText": "Buscar Queen",
   "genericErrorText": "OCORREU UM ERRO :(",
   "networkErrorText": "ERRO DE INTERNET :(",
-  "notFoundErrorText": "QUEEN NÃO ENCONTRADA :O"
+  "notFoundErrorText": "QUEEN NÃO ENCONTRADA :O",
+  "queenDetailsID": "ID:",
+  "queenDetailsName": "Nome:",
+  "queenDetailsSeasons": "Temporadas:"
 }

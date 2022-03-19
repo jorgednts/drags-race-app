@@ -11,5 +11,8 @@
   "searchQueenPageHintText": "Search Queen",
   "genericErrorText": "AN ERROR HAS OCCURRED :(",
   "networkErrorText": "NETWORK ERROR :(",
-  "notFoundErrorText": "QUEEN NOT FOUND :O"
+  "notFoundErrorText": "QUEEN NOT FOUND :O",
+  "queenDetailsID": "ID:",
+  "queenDetailsName": "Name:",
+  "queenDetailsSeasons": "Seasons:"
 }
