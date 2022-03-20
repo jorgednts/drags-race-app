@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import '../../../../generated/l10n.dart';
 import '../../../common/drag_race_constants/drag_race_constants_colors.dart';
 import '../../constants/queen_constants_images.dart';
-import '../controller/queen_details_controller.dart';
+import '../../domain/model/details/queen_details_model.dart';
 import 'custom_queen_details_text_widget.dart';
 
 class QueenBaseInfoWidget extends StatelessWidget {
   const QueenBaseInfoWidget({
-    required this.controller,
+    required this.queen,
     Key? key,
   }) : super(key: key);
 
-  final QueenDetailsController controller;
+  final QueenDetailsModel queen;
 
   String getSeasonByID(int seasonID) {
     if (seasonID <= 4) {
@@ -44,7 +44,7 @@ class QueenBaseInfoWidget extends StatelessWidget {
                 height: 140,
                 child: FadeInImage(
                   image: NetworkImage(
-                    controller.queen!.imageUrl,
+                    queen.imageUrl,
                   ),
                   placeholder:
                       const AssetImage(QueenConstantsImages.loadingIcon),
@@ -70,7 +70,7 @@ class QueenBaseInfoWidget extends StatelessWidget {
                             text: S.of(context).queenDetailsID,
                           ),
                           Text(
-                            controller.queen!.id.toString(),
+                            queen.id.toString(),
                             style: const TextStyle(fontSize: 15),
                           ),
                         ],
@@ -84,7 +84,7 @@ class QueenBaseInfoWidget extends StatelessWidget {
                             text: S.of(context).queenDetailsName,
                           ),
                           Text(
-                            controller.queen!.name,
+                            queen.name,
                             style: const TextStyle(fontSize: 15),
                           ),
                         ],
@@ -102,14 +102,14 @@ class QueenBaseInfoWidget extends StatelessWidget {
                             children: [
                               Wrap(
                                 children: List.generate(
-                                  controller.queen!.seasonsList.length,
+                                  queen.seasonsList.length,
                                   (index) => Padding(
                                     padding: const EdgeInsets.symmetric(
                                         horizontal: 3),
                                     child: Chip(
                                       label: Text(
-                                        getSeasonByID(controller
-                                            .queen!.seasonsList[index].id),
+                                        getSeasonByID(
+                                            queen.seasonsList[index].id),
                                         style: const TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.bold),

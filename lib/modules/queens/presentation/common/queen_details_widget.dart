@@ -21,7 +21,7 @@ class QueenDetailsWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              QueenBaseInfoWidget(controller: controller),
+              QueenBaseInfoWidget(queen: controller.queen!),
               Padding(
                 padding: const EdgeInsets.only(left: 20, top: 5, bottom: 5),
                 child: Text(
