@@ -14,5 +14,8 @@
   "notFoundErrorText": "QUEEN NÃO ENCONTRADA :O",
   "queenDetailsID": "ID:",
   "queenDetailsName": "Nome:",
-  "queenDetailsSeasons": "Temporadas:"
+  "queenDetailsSeasons": "Temporadas:",
+  "queenDetailsGeneralInfo": "Info Gerais:",
+  "queenDetailsSeasonsInfo": "Info de Temporadas:",
+  "queenDetailsLipsyncsInfo": "Info de Lipsyncs:"
 }

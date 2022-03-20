@@ -199,6 +199,36 @@ class S {
       args: [],
     );
   }
+
+  /// `General Info:`
+  String get queenDetailsGeneralInfo {
+    return Intl.message(
+      'General Info:',
+      name: 'queenDetailsGeneralInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Seasons Info:`
+  String get queenDetailsSeasonsInfo {
+    return Intl.message(
+      'Seasons Info:',
+      name: 'queenDetailsSeasonsInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lipsyncs Info:`
+  String get queenDetailsLipsyncsInfo {
+    return Intl.message(
+      'Lipsyncs Info:',
+      name: 'queenDetailsLipsyncsInfo',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
