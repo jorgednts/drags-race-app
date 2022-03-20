@@ -1,7 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import 'lipsync_response.dart';
-
 part 'lipsyncs_response.g.dart';
 
 @JsonSerializable(fieldRename: FieldRename.snake)

@@ -36,7 +36,7 @@ class QueenDetailsWidget extends StatelessWidget {
                 queen: controller.queen!,
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 20, top: 5, bottom: 5),
+                padding: const EdgeInsets.only(left: 20, top: 5),
                 child: Text(
                   S.of(context).queenDetailsLipsyncsInfo,
                   style: const TextStyle(
