@@ -14,6 +14,18 @@ class QueenBaseInfoWidget extends StatelessWidget {
 
   final QueenDetailsController controller;
 
+  String getSeasonByID(int seasonID) {
+    if (seasonID <= 4) {
+      return seasonID.toString();
+    } else {
+      if (seasonID % 2 == 0) {
+        return (seasonID - 1).toString();
+      } else {
+        return 'AS${seasonID - 4}';
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) => Container(
         height: 200,
@@ -96,8 +108,8 @@ class QueenBaseInfoWidget extends StatelessWidget {
                                         horizontal: 3),
                                     child: Chip(
                                       label: Text(
-                                        controller.queen!.seasonsList[index].id
-                                            .toString(),
+                                        getSeasonByID(controller
+                                            .queen!.seasonsList[index].id),
                                         style: const TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.bold),
