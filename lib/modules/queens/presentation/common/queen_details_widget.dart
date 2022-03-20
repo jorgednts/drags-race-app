@@ -48,7 +48,7 @@ class QueenDetailsWidget extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(bottom: 15),
                 child: QueenLipsyncsInfoWidget(
-                  controller: controller,
+                  lipsyncs: controller.queen!.lipsyncsList,
                 ),
               ),
             ],

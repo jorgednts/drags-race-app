@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 
 import '../../../../generated/l10n.dart';
 import '../../../common/drag_race_constants/drag_race_constants_colors.dart';
-import '../controller/queen_details_controller.dart';
+import '../../domain/model/details/lipsync_model.dart';
 import 'custom_queen_details_text_widget.dart';
 
 class QueenLipsyncsInfoWidget extends StatelessWidget {
   const QueenLipsyncsInfoWidget({
-    required this.controller,
+    required this.lipsyncs,
     Key? key,
   }) : super(key: key);
 
-  final QueenDetailsController controller;
+  final List<LipsyncModel> lipsyncs;
   static const shantay = 'Shantay, you stay!';
   static const sashay = 'Sashay away!';
 
@@ -19,7 +19,7 @@ class QueenLipsyncsInfoWidget extends StatelessWidget {
   Widget build(BuildContext context) => ListView.builder(
         physics: const ScrollPhysics(),
         shrinkWrap: true,
-        itemCount: controller.queen!.lipsyncsList.length,
+        itemCount: lipsyncs.length,
         itemBuilder: (context, index) => Container(
           height: 130,
           child: Card(
@@ -41,7 +41,7 @@ class QueenLipsyncsInfoWidget extends StatelessWidget {
                         CustomQueenDetailsTextWidget(
                             text: S.of(context).queenLipsyncInfoSongName),
                         Text(
-                          controller.queen!.lipsyncsList[index].name,
+                          lipsyncs[index].name,
                           style: const TextStyle(fontSize: 15),
                         ),
                       ],
@@ -54,7 +54,7 @@ class QueenLipsyncsInfoWidget extends StatelessWidget {
                         CustomQueenDetailsTextWidget(
                             text: S.of(context).queenLipsyncInfoSongArtist),
                         Text(
-                          controller.queen!.lipsyncsList[index].artist,
+                          lipsyncs[index].artist,
                           style: const TextStyle(fontSize: 15),
                         ),
                       ],
@@ -67,7 +67,7 @@ class QueenLipsyncsInfoWidget extends StatelessWidget {
                         CustomQueenDetailsTextWidget(
                             text: S.of(context).queenLipsyncInfoResult),
                         getLipsyncResult(
-                            controller.queen!.lipsyncsList[index].won),
+                            lipsyncs[index].won),
                       ],
                     ),
                   ),
