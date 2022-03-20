@@ -6,20 +6,22 @@ class CustomQueenDetailsTextWidget extends StatelessWidget {
   const CustomQueenDetailsTextWidget({
     required this.text,
     this.width = 90,
+    this.fontSize = 15,
     Key? key,
   }) : super(key: key);
 
   final String text;
   final double width;
+  final double fontSize;
 
   @override
   Widget build(BuildContext context) => Container(
     width: width,
     child: Text(
       text,
-      style: const TextStyle(
+      style: TextStyle(
         fontWeight: FontWeight.bold,
-        fontSize: 15,
+        fontSize: fontSize,
         color: DragRaceConstantsColors.secondaryColor,
       ),
     ),
