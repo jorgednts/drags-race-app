@@ -20,5 +20,8 @@
   "queenDetailsLipsyncsInfo": "Info de Lipsyncs:",
   "queenGeneralInfoWinner": "Ganhadora:",
   "queenGeneralInfoMissCongeniality": "Miss Simpatia:",
-  "queenGeneralInfoBestPlacement": "Melhor Colocação:"
+  "queenGeneralInfoBestPlacement": "Melhor Colocação:",
+  "queenLipsyncInfoSongName": "Música:",
+  "queenLipsyncInfoSongArtist": "Artista:",
+  "queenLipsyncInfoResult": "Resultado:"
 }

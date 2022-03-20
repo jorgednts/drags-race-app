@@ -20,5 +20,8 @@
   "queenDetailsLipsyncsInfo": "Lipsyncs Info:",
   "queenGeneralInfoWinner": "Winner:",
   "queenGeneralInfoMissCongeniality": "Miss Congeniality:",
-  "queenGeneralInfoBestPlacement": "Best Placement:"
+  "queenGeneralInfoBestPlacement": "Best Placement:",
+  "queenLipsyncInfoSongName": "Song:",
+  "queenLipsyncInfoSongArtist": "Artist:",
+  "queenLipsyncInfoResult": "Result:"
 }

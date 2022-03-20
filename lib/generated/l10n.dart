@@ -259,6 +259,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Song:`
+  String get queenLipsyncInfoSongName {
+    return Intl.message(
+      'Song:',
+      name: 'queenLipsyncInfoSongName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Artist:`
+  String get queenLipsyncInfoSongArtist {
+    return Intl.message(
+      'Artist:',
+      name: 'queenLipsyncInfoSongArtist',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Result:`
+  String get queenLipsyncInfoResult {
+    return Intl.message(
+      'Result:',
+      name: 'queenLipsyncInfoResult',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
