@@ -52,10 +52,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "queenDetailsSeasons": MessageLookupByLibrary.simpleMessage("Seasons:"),
         "queenDetailsSeasonsInfo":
             MessageLookupByLibrary.simpleMessage("Seasons Info:"),
+        "queenGeneralInfoBestPlacement":
+            MessageLookupByLibrary.simpleMessage("Best Placement:"),
         "queenGeneralInfoMissCongeniality":
-            MessageLookupByLibrary.simpleMessage("Miss Congeniality?"),
+            MessageLookupByLibrary.simpleMessage("Miss Congeniality:"),
         "queenGeneralInfoWinner":
-            MessageLookupByLibrary.simpleMessage("Winner?"),
+            MessageLookupByLibrary.simpleMessage("Winner:"),
         "searchQueenPageHintText":
             MessageLookupByLibrary.simpleMessage("Search Queen"),
         "searchQueenPageInfoText": MessageLookupByLibrary.simpleMessage(

@@ -230,21 +230,31 @@ class S {
     );
   }
 
-  /// `Winner?`
+  /// `Winner:`
   String get queenGeneralInfoWinner {
     return Intl.message(
-      'Winner?',
+      'Winner:',
       name: 'queenGeneralInfoWinner',
       desc: '',
       args: [],
     );
   }
 
-  /// `Miss Congeniality?`
+  /// `Miss Congeniality:`
   String get queenGeneralInfoMissCongeniality {
     return Intl.message(
-      'Miss Congeniality?',
+      'Miss Congeniality:',
       name: 'queenGeneralInfoMissCongeniality',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Best Placement:`
+  String get queenGeneralInfoBestPlacement {
+    return Intl.message(
+      'Best Placement:',
+      name: 'queenGeneralInfoBestPlacement',
       desc: '',
       args: [],
     );

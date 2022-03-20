@@ -18,6 +18,7 @@
   "queenDetailsGeneralInfo": "General Info:",
   "queenDetailsSeasonsInfo": "Seasons Info:",
   "queenDetailsLipsyncsInfo": "Lipsyncs Info:",
-  "queenGeneralInfoWinner": "Winner?",
-  "queenGeneralInfoMissCongeniality": "Miss Congeniality?"
+  "queenGeneralInfoWinner": "Winner:",
+  "queenGeneralInfoMissCongeniality": "Miss Congeniality:",
+  "queenGeneralInfoBestPlacement": "Best Placement:"
 }
