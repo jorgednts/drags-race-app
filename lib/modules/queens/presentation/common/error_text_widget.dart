@@ -1,5 +1,6 @@
-import '../../../common/drag_race_constants/drag_race_constants_colors.dart';
 import 'package:flutter/material.dart';
+
+import '../../../common/drag_race_constants/drag_race_constants_colors.dart';
 
 class ErrorTextWidget extends StatelessWidget {
   const ErrorTextWidget({
