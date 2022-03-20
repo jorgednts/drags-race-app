@@ -229,6 +229,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Winner?`
+  String get queenGeneralInfoWinner {
+    return Intl.message(
+      'Winner?',
+      name: 'queenGeneralInfoWinner',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Miss Congeniality?`
+  String get queenGeneralInfoMissCongeniality {
+    return Intl.message(
+      'Miss Congeniality?',
+      name: 'queenGeneralInfoMissCongeniality',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

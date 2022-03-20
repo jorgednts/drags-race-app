@@ -17,5 +17,7 @@
   "queenDetailsSeasons": "Temporadas:",
   "queenDetailsGeneralInfo": "Info Gerais:",
   "queenDetailsSeasonsInfo": "Info de Temporadas:",
-  "queenDetailsLipsyncsInfo": "Info de Lipsyncs:"
+  "queenDetailsLipsyncsInfo": "Info de Lipsyncs:",
+  "queenGeneralInfoWinner": "Ganhadora?",
+  "queenGeneralInfoMissCongeniality": "Miss Simpatia?"
 }
