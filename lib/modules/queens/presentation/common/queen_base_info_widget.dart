@@ -4,7 +4,7 @@ import '../../../../generated/l10n.dart';
 import '../../../common/drag_race_constants/drag_race_constants_colors.dart';
 import '../../constants/queen_constants_images.dart';
 import '../controller/queen_details_controller.dart';
-import 'queen_details_widget.dart';
+import 'custom_queen_details_text_widget.dart';
 
 class QueenBaseInfoWidget extends StatelessWidget {
   const QueenBaseInfoWidget({
@@ -66,7 +66,7 @@ class QueenBaseInfoWidget extends StatelessWidget {
                       padding: const EdgeInsets.only(bottom: 15),
                       child: Row(
                         children: [
-                          CustomQueenDetailsText(
+                          CustomQueenDetailsTextWidget(
                             text: S.of(context).queenDetailsID,
                           ),
                           Text(
@@ -80,7 +80,7 @@ class QueenBaseInfoWidget extends StatelessWidget {
                       padding: const EdgeInsets.only(bottom: 15),
                       child: Row(
                         children: [
-                          CustomQueenDetailsText(
+                          CustomQueenDetailsTextWidget(
                             text: S.of(context).queenDetailsName,
                           ),
                           Text(
@@ -94,7 +94,7 @@ class QueenBaseInfoWidget extends StatelessWidget {
                       padding: const EdgeInsets.only(bottom: 15),
                       child: Row(
                         children: [
-                          CustomQueenDetailsText(
+                          CustomQueenDetailsTextWidget(
                             text: S.of(context).queenDetailsSeasons,
                           ),
                           Row(
