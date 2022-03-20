@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../generated/l10n.dart';
 import '../../../common/drag_race_constants/drag_race_constants_colors.dart';
+import '../../domain/model/details/season_model.dart';
 import '../controller/queen_details_controller.dart';
 import 'custom_queen_details_text_widget.dart';
 
@@ -15,7 +16,7 @@ class QueenGeneralInfoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Container(
-        height: 110,
+        height: 140,
         child: Card(
           shape: RoundedRectangleBorder(
             side: const BorderSide(
@@ -35,7 +36,7 @@ class QueenGeneralInfoWidget extends StatelessWidget {
                       CustomQueenDetailsTextWidget(
                         text: S.of(context).queenGeneralInfoWinner,
                         fontSize: 18,
-                        width: 120,
+                        width: 180,
                       ),
                       setIcon(controller.queen!.winner),
                     ],
@@ -48,9 +49,32 @@ class QueenGeneralInfoWidget extends StatelessWidget {
                       CustomQueenDetailsTextWidget(
                         text: S.of(context).queenGeneralInfoMissCongeniality,
                         fontSize: 18,
-                        width: 120,
+                        width: 180,
                       ),
                       setIcon(controller.queen!.missCongeniality),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 15),
+                  child: Row(
+                    children: [
+                      CustomQueenDetailsTextWidget(
+                        text: S.of(context).queenGeneralInfoBestPlacement,
+                        fontSize: 18,
+                        width: 180,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 30),
+                        child: Text(
+                          '#${getQueenBestPlacement(controller.queen!.
+                          seasonsList)}',
+                          style: const TextStyle(
+                              color: DragRaceConstantsColors.secondaryColor,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -78,5 +102,15 @@ class QueenGeneralInfoWidget extends StatelessWidget {
         ),
       );
     }
+  }
+
+  int getQueenBestPlacement(List<SeasonModel> seasonsList) {
+    var bestPlace = seasonsList[0].place;
+    for (final season in seasonsList) {
+      if (season.place < bestPlace) {
+        bestPlace = season.place;
+      }
+    }
+    return bestPlace;
   }
 }
