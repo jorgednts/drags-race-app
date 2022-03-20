@@ -97,7 +97,6 @@ class QueenLipsyncsInfoWidget extends StatelessWidget {
           color: Colors.pinkAccent,
         ),
       );
-      ;
     }
   }
 }
