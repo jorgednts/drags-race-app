@@ -8,12 +8,16 @@ part of 'lipsyncs_response.dart';
 
 LipsyncsResponse _$LipsyncsResponseFromJson(Map<String, dynamic> json) =>
     LipsyncsResponse(
-      lipsync: json['lipsync'] == null
-          ? null
-          : LipsyncResponse.fromJson(json['lipsync'] as Map<String, dynamic>),
+      id: json['id'] as int?,
+      won: json['won'] as bool?,
+      name: json['name'] as String?,
+      artist: json['artist'] as String?,
     );
 
 Map<String, dynamic> _$LipsyncsResponseToJson(LipsyncsResponse instance) =>
     <String, dynamic>{
-      'lipsync': instance.lipsync,
+      'id': instance.id,
+      'won': instance.won,
+      'name': instance.name,
+      'artist': instance.artist,
     };
