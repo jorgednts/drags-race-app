@@ -1,8 +1,8 @@
-import 'package:drags_race_app/modules/queens/presentation/page/queen_details_page.dart';
 import 'package:flutter/material.dart';
 
 import '../../../common/drag_race_constants/drag_race_constants_colors.dart';
 import '../../domain/model/queen/queen_model.dart';
+import '../page/queen_details_page.dart';
 
 class QueenCardWidget extends StatelessWidget {
   const QueenCardWidget({

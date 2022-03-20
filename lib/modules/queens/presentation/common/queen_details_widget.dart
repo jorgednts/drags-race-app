@@ -1,10 +1,8 @@
-import 'package:drags_race_app/modules/queens/constants/queen_constants_images.dart';
-import 'package:drags_race_app/modules/queens/presentation/common/queen_base_info_widget.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../generated/l10n.dart';
 import '../../../common/drag_race_constants/drag_race_constants_colors.dart';
 import '../controller/queen_details_controller.dart';
+import 'queen_base_info_widget.dart';
 
 class QueenDetailsWidget extends StatelessWidget {
   const QueenDetailsWidget({
