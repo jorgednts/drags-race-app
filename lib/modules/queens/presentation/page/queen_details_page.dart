@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:drags_race_app/modules/queens/presentation/common/queen_details_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../generated/l10n.dart';
@@ -11,6 +10,7 @@ import '../../domain/use_case/get_queen_by_id_use_case.dart';
 import '../../external/remote_data_source/drags_race_remote_data_source_impl.dart';
 import '../common/circular_progress_indicator_widget.dart';
 import '../common/error_text_widget.dart';
+import '../common/queen_details_widget.dart';
 import '../controller/queen_details_controller.dart';
 import 'queen_details_page_state.dart';
 
