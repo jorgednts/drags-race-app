@@ -56,9 +56,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "queenGeneralInfoBestPlacement":
             MessageLookupByLibrary.simpleMessage("Melhor Colocação:"),
         "queenGeneralInfoMissCongeniality":
-            MessageLookupByLibrary.simpleMessage("Miss Simpatia?"),
+            MessageLookupByLibrary.simpleMessage("Miss Simpatia:?"),
         "queenGeneralInfoWinner":
-            MessageLookupByLibrary.simpleMessage("Ganhadora?"),
+            MessageLookupByLibrary.simpleMessage("Ganhadora:"),
         "searchQueenPageHintText":
             MessageLookupByLibrary.simpleMessage("Buscar Queen"),
         "searchQueenPageInfoText": MessageLookupByLibrary.simpleMessage(
