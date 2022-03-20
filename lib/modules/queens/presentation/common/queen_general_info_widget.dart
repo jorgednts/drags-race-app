@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 
 import '../../../../generated/l10n.dart';
 import '../../../common/drag_race_constants/drag_race_constants_colors.dart';
+import '../../domain/model/details/queen_details_model.dart';
 import '../../domain/model/details/season_model.dart';
-import '../controller/queen_details_controller.dart';
 import 'custom_queen_details_text_widget.dart';
 
 class QueenGeneralInfoWidget extends StatelessWidget {
   const QueenGeneralInfoWidget({
-    required this.controller,
+    required this.queen,
     Key? key,
   }) : super(key: key);
 
-  final QueenDetailsController controller;
+  final QueenDetailsModel queen;
 
   @override
   Widget build(BuildContext context) => Container(
@@ -38,7 +38,7 @@ class QueenGeneralInfoWidget extends StatelessWidget {
                         fontSize: 18,
                         width: 180,
                       ),
-                      setIcon(controller.queen!.winner),
+                      setIcon(queen.winner),
                     ],
                   ),
                 ),
@@ -51,7 +51,7 @@ class QueenGeneralInfoWidget extends StatelessWidget {
                         fontSize: 18,
                         width: 180,
                       ),
-                      setIcon(controller.queen!.missCongeniality),
+                      setIcon(queen.missCongeniality),
                     ],
                   ),
                 ),
@@ -67,8 +67,7 @@ class QueenGeneralInfoWidget extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 30),
                         child: Text(
-                          '#${getQueenBestPlacement(controller.queen!.
-                          seasonsList)}',
+                          '#${getQueenBestPlacement(queen.seasonsList)}',
                           style: const TextStyle(
                               color: DragRaceConstantsColors.secondaryColor,
                               fontSize: 18,
