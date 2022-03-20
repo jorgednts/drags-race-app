@@ -92,12 +92,21 @@ class QueenGeneralInfoWidget extends StatelessWidget {
           color: Colors.greenAccent,
         ),
       );
-    } else {
+    }
+    if (isPositive == false) {
       return const Padding(
         padding: EdgeInsets.only(left: 30),
         child: Icon(
           Icons.thumb_down_alt_rounded,
           color: Colors.pink,
+        ),
+      );
+    } else {
+      return const Padding(
+        padding: EdgeInsets.only(left: 30),
+        child: Icon(
+          Icons.circle,
+          color: Colors.grey,
         ),
       );
     }

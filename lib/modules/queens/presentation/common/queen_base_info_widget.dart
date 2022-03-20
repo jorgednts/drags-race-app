@@ -42,6 +42,7 @@ class QueenBaseInfoWidget extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.only(left: 15),
                 height: 140,
+                width: 120,
                 child: FadeInImage(
                   image: NetworkImage(
                     queen.imageUrl,
@@ -54,6 +55,7 @@ class QueenBaseInfoWidget extends StatelessWidget {
                     fit: BoxFit.fitWidth,
                   ),
                   fit: BoxFit.fitHeight,
+                  placeholderFit: BoxFit.fitWidth,
                 ),
               ),
               Padding(
