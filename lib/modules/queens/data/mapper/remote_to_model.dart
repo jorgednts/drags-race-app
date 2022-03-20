@@ -31,11 +31,11 @@ extension QueenDetailsResponseToQueenDetailsModel on QueenDetailsResponse {
         seasonsList: seasons
                 ?.map(
                   (season) => SeasonModel(
-                      seasonNumber: season.season?.seasonNumber ??
+                      seasonNumber: season.seasonNumber ??
                           NullResponseConstants.nullStringResponse,
-                      id: season.season?.id ??
+                      id: season.id ??
                           NullResponseConstants.nullIntResponse,
-                      place: season.season?.place ??
+                      place: season.place ??
                           NullResponseConstants.nullIntResponse),
                 )
                 .toList() ??
@@ -43,13 +43,13 @@ extension QueenDetailsResponseToQueenDetailsModel on QueenDetailsResponse {
         lipsyncsList: lipsyncs
                 ?.map(
                   (lipsync) => LipsyncModel(
-                      id: lipsync.lipsync?.id ??
+                      id: lipsync.id ??
                           NullResponseConstants.nullIntResponse,
-                      won: lipsync.lipsync?.won ??
+                      won: lipsync.won ??
                           NullResponseConstants.nullBoolResponse,
-                      name: lipsync.lipsync?.name ??
+                      name: lipsync.name ??
                           NullResponseConstants.nullStringResponse,
-                      artist: lipsync.lipsync?.artist ??
+                      artist: lipsync.artist ??
                           NullResponseConstants.nullStringResponse),
                 )
                 .toList() ??
