@@ -16,14 +16,14 @@ class CustomQueenDetailsTextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Container(
-    width: width,
-    child: Text(
-      text,
-      style: TextStyle(
-        fontWeight: FontWeight.bold,
-        fontSize: fontSize,
-        color: DragRaceConstantsColors.secondaryColor,
-      ),
-    ),
-  );
+        width: width,
+        child: Text(
+          text,
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: fontSize,
+            color: DragRaceConstantsColors.secondaryColor,
+          ),
+        ),
+      );
 }
