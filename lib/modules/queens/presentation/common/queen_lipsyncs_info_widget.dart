@@ -13,7 +13,7 @@ class QueenLipsyncsInfoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ListView.builder(
-    padding: const EdgeInsets.only(top: 15),
+    padding: const EdgeInsets.only(top: 10),
         physics: const ScrollPhysics(),
         shrinkWrap: true,
         itemCount: lipsyncs.length,

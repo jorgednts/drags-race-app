@@ -22,7 +22,7 @@ class LipsyncCardWidget extends StatelessWidget {
           shape: RoundedRectangleBorder(
             side: const BorderSide(
               color: DragRaceConstantsColors.secondaryColor,
-              width: 2,
+              width: 3,
             ),
             borderRadius: BorderRadius.circular(25),
           ),
