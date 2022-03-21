@@ -77,7 +77,7 @@ class _QueenDetailsPageState extends State<QueenDetailsPage> {
                         case QueenDetailsPageState.loading:
                           return const CircularProgressIndicatorWidget();
                         case QueenDetailsPageState.successQueenList:
-                          return QueenDetailsWidget(controller: controller);
+                          return QueenDetailsWidget(queen: controller.queen!);
                         case QueenDetailsPageState.genericError:
                           return ErrorTextWidget(
                             errorText: S.of(context).genericErrorText,
