@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
 import '../../../../generated/l10n.dart';
-import '../controller/queen_details_controller.dart';
+import '../../domain/model/details/queen_details_model.dart';
 import 'queen_base_info_widget.dart';
 import 'queen_general_info_widget.dart';
 import 'queen_lipsyncs_info_widget.dart';
 
 class QueenDetailsWidget extends StatelessWidget {
   const QueenDetailsWidget({
-    required this.controller,
+    required this.queen,
     Key? key,
   }) : super(key: key);
 
-  final QueenDetailsController controller;
+  final QueenDetailsModel queen;
 
   @override
   Widget build(BuildContext context) => Center(
@@ -21,7 +21,7 @@ class QueenDetailsWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              QueenBaseInfoWidget(queen: controller.queen!),
+              QueenBaseInfoWidget(queen: queen),
               Padding(
                 padding: const EdgeInsets.only(left: 20, top: 5, bottom: 5),
                 child: Text(
@@ -33,7 +33,7 @@ class QueenDetailsWidget extends StatelessWidget {
                 ),
               ),
               QueenGeneralInfoWidget(
-                queen: controller.queen!,
+                queen: queen,
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 20, top: 5),
@@ -48,7 +48,7 @@ class QueenDetailsWidget extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(bottom: 15),
                 child: QueenLipsyncsInfoWidget(
-                  lipsyncs: controller.queen!.lipsyncsList,
+                  lipsyncs: queen.lipsyncsList,
                 ),
               ),
             ],
