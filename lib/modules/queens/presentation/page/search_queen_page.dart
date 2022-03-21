@@ -1,3 +1,10 @@
+import 'package:dio/dio.dart';
+import 'package:drags_race_app/modules/queens/data/remote/data_source/drags_race_remote_data_source.dart';
+import 'package:drags_race_app/modules/queens/data/repository/queen_repository_impl.dart';
+import 'package:drags_race_app/modules/queens/domain/repository/queen_repository.dart';
+import 'package:drags_race_app/modules/queens/domain/use_case/get_queen_by_name_use_case.dart';
+import 'package:drags_race_app/modules/queens/external/remote_data_source/drags_race_remote_data_source_impl.dart';
+import 'package:drags_race_app/modules/queens/presentation/controller/search_queen_page_controller.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../generated/l10n.dart';
@@ -12,6 +19,27 @@ class SearchQueenPage extends StatefulWidget {
 }
 
 class _SearchQueenPageState extends State<SearchQueenPage> {
+
+  late DragsRaceRemoteDataSource dragsRaceRemoteDataSource;
+  late QueenRepository queenRepository;
+  late GetQueenByNameUseCase getQueenByNameUseCase;
+  late SearchQueenPageController controller;
+  late TextEditingController queenName;
+
+  @override
+  void initState() {
+    super.initState();
+    dragsRaceRemoteDataSource = DragsRaceRemoteDataSourceImpl(dio: Dio());
+    queenRepository = QueenRepositoryImpl(
+        dragsRaceRemoteDataSource: dragsRaceRemoteDataSource);
+    getQueenByNameUseCase =
+        GetQueenByNameUseCaseImpl(queenRepository: queenRepository);
+    controller =
+        SearchQueenPageController(getQueenByNameUseCase: getQueenByNameUseCase);
+    queenName = TextEditingController();
+    controller.getQueenByName(queenName.toString());
+  }
+
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
