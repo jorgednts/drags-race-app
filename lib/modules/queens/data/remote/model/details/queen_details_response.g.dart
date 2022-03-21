@@ -12,7 +12,7 @@ QueenDetailsResponse _$QueenDetailsResponseFromJson(
       id: json['id'] as int?,
       name: json['name'] as String?,
       winner: json['winner'] as bool?,
-      congeniality: json['miss_congeniality'] as bool?,
+      congeniality: json['missCongeniality'] as bool?,
       imageUrl: json['image_url'] as String?,
       quote: json['quote'] as String?,
       lipsyncs: (json['lipsyncs'] as List<dynamic>?)
@@ -29,7 +29,7 @@ Map<String, dynamic> _$QueenDetailsResponseToJson(
       'id': instance.id,
       'name': instance.name,
       'winner': instance.winner,
-      'miss_congeniality': instance.congeniality,
+      'missCongeniality': instance.congeniality,
       'image_url': instance.imageUrl,
       'quote': instance.quote,
       'lipsyncs': instance.lipsyncs,
