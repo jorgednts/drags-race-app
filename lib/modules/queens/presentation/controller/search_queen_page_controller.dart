@@ -18,18 +18,22 @@ class SearchQueenPageController extends ValueNotifier<SearchQueenPageState> {
   QueenDetailsModel? queen;
 
   Future<void> getQueenByName(String queenName) async {
-    value = SearchQueenPageState.loading;
-    try {
-      queen = await _getQueenByNameUseCase.call(formatQueenName(queenName));
-      value = SearchQueenPageState.successQueen;
-    } on NotFoundQueenException {
-      value = SearchQueenPageState.notFoundQueen;
-    } on GenericErrorStatusCodeException {
-      value = SearchQueenPageState.genericError;
-    } on NetworkErrorException {
-      value = SearchQueenPageState.networkError;
-    } catch (e) {
-      value = SearchQueenPageState.genericError;
+    if(queenName.isEmpty){
+      value = SearchQueenPageState.initialState;
+    }else{
+      value = SearchQueenPageState.loading;
+      try {
+        queen = await _getQueenByNameUseCase.call(formatQueenName(queenName));
+        value = SearchQueenPageState.successQueen;
+      } on NotFoundQueenException {
+        value = SearchQueenPageState.notFoundQueen;
+      } on GenericErrorStatusCodeException {
+        value = SearchQueenPageState.genericError;
+      } on NetworkErrorException {
+        value = SearchQueenPageState.networkError;
+      } catch (e) {
+        value = SearchQueenPageState.genericError;
+      }
     }
   }
 

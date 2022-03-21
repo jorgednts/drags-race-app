@@ -1,4 +1,5 @@
 enum SearchQueenPageState{
+  initialState,
   loading,
   genericError,
   networkError,
