@@ -170,6 +170,16 @@ class S {
     );
   }
 
+  /// `Quote:`
+  String get queenDetailsQuote {
+    return Intl.message(
+      'Quote:',
+      name: 'queenDetailsQuote',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `ID:`
   String get queenDetailsID {
     return Intl.message(

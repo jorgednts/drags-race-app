@@ -49,6 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "queenDetailsLipsyncsInfo":
             MessageLookupByLibrary.simpleMessage("Info de Lipsyncs:"),
         "queenDetailsName": MessageLookupByLibrary.simpleMessage("Nome:"),
+        "queenDetailsQuote": MessageLookupByLibrary.simpleMessage("Frase:"),
         "queenDetailsSeasons":
             MessageLookupByLibrary.simpleMessage("Temporadas:"),
         "queenDetailsSeasonsInfo":

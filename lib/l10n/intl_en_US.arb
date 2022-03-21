@@ -12,6 +12,7 @@
   "genericErrorText": "AN ERROR HAS OCCURRED :(",
   "networkErrorText": "NETWORK ERROR :(",
   "notFoundErrorText": "QUEEN NOT FOUND :O",
+  "queenDetailsQuote": "Quote:",
   "queenDetailsID": "ID:",
   "queenDetailsName": "Name:",
   "queenDetailsSeasons": "Seasons:",
