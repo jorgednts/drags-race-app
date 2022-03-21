@@ -25,7 +25,7 @@ extension QueenDetailsResponseToQueenDetailsModel on QueenDetailsResponse {
         name: name ?? NullResponseConstants.nullStringResponse,
         winner: winner ?? NullResponseConstants.nullBoolResponse,
         missCongeniality:
-            missCongeniality ?? NullResponseConstants.nullBoolResponse,
+            congeniality ?? NullResponseConstants.nullBoolResponse,
         quote: quote ?? NullResponseConstants.nullStringResponse,
         imageUrl: imageUrl ?? NullResponseConstants.nullStringResponse,
         seasonsList: seasons
