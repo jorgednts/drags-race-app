@@ -4,7 +4,10 @@ import 'package:drags_race_app/modules/queens/data/repository/queen_repository_i
 import 'package:drags_race_app/modules/queens/domain/repository/queen_repository.dart';
 import 'package:drags_race_app/modules/queens/domain/use_case/get_queen_by_name_use_case.dart';
 import 'package:drags_race_app/modules/queens/external/remote_data_source/drags_race_remote_data_source_impl.dart';
+import 'package:drags_race_app/modules/queens/presentation/common/circular_progress_indicator_widget.dart';
+import 'package:drags_race_app/modules/queens/presentation/common/queen_details_widget.dart';
 import 'package:drags_race_app/modules/queens/presentation/controller/search_queen_page_controller.dart';
+import 'package:drags_race_app/modules/queens/presentation/page/search_queen_page_state.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../generated/l10n.dart';
@@ -19,7 +22,6 @@ class SearchQueenPage extends StatefulWidget {
 }
 
 class _SearchQueenPageState extends State<SearchQueenPage> {
-
   late DragsRaceRemoteDataSource dragsRaceRemoteDataSource;
   late QueenRepository queenRepository;
   late GetQueenByNameUseCase getQueenByNameUseCase;
@@ -65,8 +67,7 @@ class _SearchQueenPageState extends State<SearchQueenPage> {
                           decoration: InputDecoration(
                             hintText: S.of(context).searchQueenPageHintText,
                             contentPadding: const EdgeInsets.only(left: 20),
-                            hintStyle: const TextStyle(
-                                color: Colors.grey),
+                            hintStyle: const TextStyle(color: Colors.grey),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(50),
                               borderSide: const BorderSide(
@@ -77,7 +78,7 @@ class _SearchQueenPageState extends State<SearchQueenPage> {
                         ),
                       ),
                       GestureDetector(
-                        onTap: (){},
+                        onTap: () {},
                         child: const Padding(
                           padding: EdgeInsets.only(left: 15),
                           child: Icon(
@@ -90,21 +91,57 @@ class _SearchQueenPageState extends State<SearchQueenPage> {
                     ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 200),
-                  child: Container(
-                      width: 300,
-                      child: Text(
-                        S.of(context).searchQueenPageInfoText,
-                        style: const TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold,
-                            color: DragRaceConstantsColors.primaryColor),
-                        textAlign: TextAlign.center,
-                      )),
-                )
+                ValueListenableBuilder<SearchQueenPageState>(
+                  valueListenable: controller,
+                  builder: (context, state, _) {
+                    switch (state) {
+                      case SearchQueenPageState.initialState:
+                        return SearchQueenPageStateMessageWidget(
+                          message: S.of(context).searchQueenPageInfoText,
+                        );
+                      case SearchQueenPageState.loading:
+                        return const CircularProgressIndicatorWidget();
+                      case SearchQueenPageState.notFoundQueen:
+                        return SearchQueenPageStateMessageWidget(
+                            message: S.of(context).notFoundErrorText);
+                      case SearchQueenPageState.genericError:
+                        return SearchQueenPageStateMessageWidget(
+                            message: S.of(context).genericErrorText);
+                      case SearchQueenPageState.networkError:
+                        return SearchQueenPageStateMessageWidget(
+                            message: S.of(context).networkErrorText);
+                      case SearchQueenPageState.successQueen:
+                        return QueenDetailsWidget(queen: controller.queen!);
+                    }
+                  },
+                ),
               ],
             ),
+          ),
+        ),
+      );
+}
+
+class SearchQueenPageStateMessageWidget extends StatelessWidget {
+  const SearchQueenPageStateMessageWidget({
+    required this.message,
+    Key? key,
+  }) : super(key: key);
+
+  final String message;
+
+  @override
+  Widget build(BuildContext context) => Padding(
+        padding: const EdgeInsets.only(top: 200),
+        child: Container(
+          width: 300,
+          child: Text(
+            message,
+            style: const TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+                color: DragRaceConstantsColors.primaryColor),
+            textAlign: TextAlign.center,
           ),
         ),
       );
