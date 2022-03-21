@@ -17,7 +17,7 @@ class QueenDetailsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Center(
         child: Padding(
-          padding: const EdgeInsets.only(top: 100),
+          padding: const EdgeInsets.only(top: 80),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
