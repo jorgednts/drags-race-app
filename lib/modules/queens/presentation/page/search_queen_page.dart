@@ -48,12 +48,15 @@ class _SearchQueenPageState extends State<SearchQueenPage> {
                           ),
                         ),
                       ),
-                      const Padding(
-                        padding: EdgeInsets.only(left: 15),
-                        child: Icon(
-                          Icons.search_rounded,
-                          color: DragRaceConstantsColors.secondaryColor,
-                          size: 35,
+                      GestureDetector(
+                        onTap: (){},
+                        child: const Padding(
+                          padding: EdgeInsets.only(left: 15),
+                          child: Icon(
+                            Icons.search_rounded,
+                            color: DragRaceConstantsColors.secondaryColor,
+                            size: 35,
+                          ),
                         ),
                       ),
                     ],
