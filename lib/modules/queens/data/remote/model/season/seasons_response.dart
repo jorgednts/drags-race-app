@@ -5,7 +5,7 @@ part 'seasons_response.g.dart';
 @JsonSerializable(fieldRename: FieldRename.snake)
 class SeasonsResponse {
   SeasonsResponse({
-    required this.seasonNumber,
+    required this.number,
     required this.id,
     required this.place,
   });
@@ -13,7 +13,8 @@ class SeasonsResponse {
   factory SeasonsResponse.fromJson(Map<String, dynamic> json) =>
       _$SeasonsResponseFromJson(json);
 
-  final String? seasonNumber;
+  @JsonKey(name: 'seasonNumber')
+  final String? number;
   final int? id;
   final int? place;
 

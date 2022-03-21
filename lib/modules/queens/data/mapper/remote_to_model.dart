@@ -31,7 +31,7 @@ extension QueenDetailsResponseToQueenDetailsModel on QueenDetailsResponse {
         seasonsList: seasons
                 ?.map(
                   (season) => SeasonModel(
-                      seasonNumber: season.seasonNumber ??
+                      seasonNumber: season.number ??
                           NullResponseConstants.nullStringResponse,
                       id: season.id ??
                           NullResponseConstants.nullIntResponse,

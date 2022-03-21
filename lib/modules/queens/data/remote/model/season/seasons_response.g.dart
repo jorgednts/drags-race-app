@@ -8,14 +8,14 @@ part of 'seasons_response.dart';
 
 SeasonsResponse _$SeasonsResponseFromJson(Map<String, dynamic> json) =>
     SeasonsResponse(
-      seasonNumber: json['season_number'] as String?,
+      number: json['seasonNumber'] as String?,
       id: json['id'] as int?,
       place: json['place'] as int?,
     );
 
 Map<String, dynamic> _$SeasonsResponseToJson(SeasonsResponse instance) =>
     <String, dynamic>{
-      'season_number': instance.seasonNumber,
+      'seasonNumber': instance.number,
       'id': instance.id,
       'place': instance.place,
     };
