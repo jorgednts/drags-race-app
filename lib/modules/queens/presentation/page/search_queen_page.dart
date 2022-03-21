@@ -1,18 +1,18 @@
 import 'package:dio/dio.dart';
-import 'package:drags_race_app/modules/queens/data/remote/data_source/drags_race_remote_data_source.dart';
-import 'package:drags_race_app/modules/queens/data/repository/queen_repository_impl.dart';
-import 'package:drags_race_app/modules/queens/domain/repository/queen_repository.dart';
-import 'package:drags_race_app/modules/queens/domain/use_case/get_queen_by_name_use_case.dart';
-import 'package:drags_race_app/modules/queens/external/remote_data_source/drags_race_remote_data_source_impl.dart';
-import 'package:drags_race_app/modules/queens/presentation/common/circular_progress_indicator_widget.dart';
-import 'package:drags_race_app/modules/queens/presentation/common/queen_details_widget.dart';
-import 'package:drags_race_app/modules/queens/presentation/controller/search_queen_page_controller.dart';
-import 'package:drags_race_app/modules/queens/presentation/page/search_queen_page_state.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../generated/l10n.dart';
 import '../../../common/drag_race_constants/drag_race_constants_colors.dart';
 import '../../../common/drag_race_constants/drag_race_constants_strings.dart';
+import '../../data/remote/data_source/drags_race_remote_data_source.dart';
+import '../../data/repository/queen_repository_impl.dart';
+import '../../domain/repository/queen_repository.dart';
+import '../../domain/use_case/get_queen_by_name_use_case.dart';
+import '../../external/remote_data_source/drags_race_remote_data_source_impl.dart';
+import '../common/circular_progress_indicator_widget.dart';
+import '../common/queen_details_widget.dart';
+import '../controller/search_queen_page_controller.dart';
+import 'search_queen_page_state.dart';
 
 class SearchQueenPage extends StatefulWidget {
   const SearchQueenPage({Key? key}) : super(key: key);
