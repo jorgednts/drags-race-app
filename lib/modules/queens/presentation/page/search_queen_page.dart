@@ -36,10 +36,9 @@ class _SearchQueenPageState extends State<SearchQueenPage> {
         dragsRaceRemoteDataSource: dragsRaceRemoteDataSource);
     getQueenByNameUseCase =
         GetQueenByNameUseCaseImpl(queenRepository: queenRepository);
+    queenName = TextEditingController();
     controller =
         SearchQueenPageController(getQueenByNameUseCase: getQueenByNameUseCase);
-    queenName = TextEditingController();
-    controller.getQueenByName(queenName.toString());
   }
 
   @override
@@ -64,6 +63,7 @@ class _SearchQueenPageState extends State<SearchQueenPage> {
                       Container(
                         width: 280,
                         child: TextField(
+                          controller: queenName,
                           decoration: InputDecoration(
                             hintText: S.of(context).searchQueenPageHintText,
                             contentPadding: const EdgeInsets.only(left: 20),
@@ -78,7 +78,13 @@ class _SearchQueenPageState extends State<SearchQueenPage> {
                         ),
                       ),
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          controller.getQueenByName(
+                            formatQueenName(
+                              queenName.toString(),
+                            ),
+                          );
+                        },
                         child: const Padding(
                           padding: EdgeInsets.only(left: 15),
                           child: Icon(
@@ -99,6 +105,8 @@ class _SearchQueenPageState extends State<SearchQueenPage> {
                         return SearchQueenPageStateMessageWidget(
                           message: S.of(context).searchQueenPageInfoText,
                         );
+                      case SearchQueenPageState.successQueen:
+                        return QueenDetailsWidget(queen: controller.queen!);
                       case SearchQueenPageState.loading:
                         return const CircularProgressIndicatorWidget();
                       case SearchQueenPageState.notFoundQueen:
@@ -110,8 +118,6 @@ class _SearchQueenPageState extends State<SearchQueenPage> {
                       case SearchQueenPageState.networkError:
                         return SearchQueenPageStateMessageWidget(
                             message: S.of(context).networkErrorText);
-                      case SearchQueenPageState.successQueen:
-                        return QueenDetailsWidget(queen: controller.queen!);
                     }
                   },
                 ),
@@ -120,6 +126,11 @@ class _SearchQueenPageState extends State<SearchQueenPage> {
           ),
         ),
       );
+
+  String formatQueenName(String queenName) {
+    final formatedQueenName = queenName.replaceAll(RegExp(' '), '%20');
+    return formatedQueenName;
+  }
 }
 
 class SearchQueenPageStateMessageWidget extends StatelessWidget {

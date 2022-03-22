@@ -1,4 +1,1 @@
-
-class NotFoundQueenException implements Exception {
-
-}
+class NotFoundQueenException implements Exception {}

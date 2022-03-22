@@ -54,10 +54,9 @@ class DragsRaceRemoteDataSourceImpl implements DragsRaceRemoteDataSource {
 
   @override
   Future<QueenDetailsModel> getQueenByName(String queenName) async {
-    final queen = queenName;
     try {
       final response = await _dio
-          .get('${QueensConstantsUrlApi.queenBaseUrl}/queens?name=$queen');
+          .get('${QueensConstantsUrlApi.queenBaseUrl}?name=$queenName');
       final queenDetailsResponse = QueenDetailsResponse.fromJson(response.data);
       return queenDetailsResponse.toQueenDetailsModel();
     } on DioError catch (dioError, _) {

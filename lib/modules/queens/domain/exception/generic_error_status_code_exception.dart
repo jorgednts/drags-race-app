@@ -1,5 +1,1 @@
-
-
-class GenericErrorStatusCodeException implements Exception {
-
-}
+class GenericErrorStatusCodeException implements Exception {}
