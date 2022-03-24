@@ -13,7 +13,6 @@ class QueenDetailsResponse {
     this.winner,
     this.congeniality,
     this.imageUrl,
-    this.quote,
     this.lipsyncs,
     this.seasons,
   });
@@ -27,7 +26,6 @@ class QueenDetailsResponse {
   @JsonKey(name: 'missCongeniality')
   final bool? congeniality;
   final String? imageUrl;
-  final String? quote;
   final List<LipsyncsResponse>? lipsyncs;
   final List<SeasonsResponse>? seasons;
 

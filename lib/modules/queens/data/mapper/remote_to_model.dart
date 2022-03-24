@@ -10,12 +10,8 @@ extension QueenListResponseToQueenListModel on List<QueenResponse> {
   List<QueenModel> toQueenListModel() => map((queenResponse) => QueenModel(
         id: queenResponse.id ?? NullResponseConstants.nullIntResponse,
         name: queenResponse.name ?? NullResponseConstants.nullStringResponse,
-        winner: queenResponse.winner ?? NullResponseConstants.nullBoolResponse,
-        missCongeniality: queenResponse.congeniality ??
-            NullResponseConstants.nullBoolResponse,
         imageUrl:
             queenResponse.imageUrl ?? NullResponseConstants.nullStringResponse,
-        quote: queenResponse.quote ?? NullResponseConstants.nullStringResponse,
       )).toList();
 }
 
@@ -26,7 +22,6 @@ extension QueenDetailsResponseToQueenDetailsModel on QueenDetailsResponse {
         winner: winner ?? NullResponseConstants.nullBoolResponse,
         missCongeniality:
             congeniality ?? NullResponseConstants.nullBoolResponse,
-        quote: quote ?? NullResponseConstants.nullStringResponse,
         imageUrl: imageUrl ?? NullResponseConstants.nullStringResponse,
         seasonsList: seasons
                 ?.map(

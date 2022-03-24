@@ -14,7 +14,6 @@ QueenDetailsResponse _$QueenDetailsResponseFromJson(
       winner: json['winner'] as bool?,
       congeniality: json['missCongeniality'] as bool?,
       imageUrl: json['image_url'] as String?,
-      quote: json['quote'] as String?,
       lipsyncs: (json['lipsyncs'] as List<dynamic>?)
           ?.map((e) => LipsyncsResponse.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -31,7 +30,6 @@ Map<String, dynamic> _$QueenDetailsResponseToJson(
       'winner': instance.winner,
       'missCongeniality': instance.congeniality,
       'image_url': instance.imageUrl,
-      'quote': instance.quote,
       'lipsyncs': instance.lipsyncs,
       'seasons': instance.seasons,
     };

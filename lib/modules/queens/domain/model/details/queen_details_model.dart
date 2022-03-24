@@ -8,7 +8,6 @@ class QueenDetailsModel {
     required this.name,
     required this.winner,
     required this.missCongeniality,
-    required this.quote,
     required this.imageUrl,
     required this.seasonsList,
     required this.lipsyncsList,
@@ -18,7 +17,6 @@ class QueenDetailsModel {
   final String name;
   final bool winner;
   final bool missCongeniality;
-  final String quote;
   final String imageUrl;
   final List<SeasonModel> seasonsList;
   final List<LipsyncModel> lipsyncsList;
