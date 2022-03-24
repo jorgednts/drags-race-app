@@ -106,7 +106,8 @@ class _SearchQueenPageState extends State<SearchQueenPage> {
                           message: S.of(context).searchQueenPageInfoText,
                         );
                       case SearchQueenPageState.successQueen:
-                        return QueenDetailsWidget(queen: controller.queen!);
+                        return const Text('SUCESSO!');
+                    //QueenDetailsWidget(queen: controller.queen!);
                       case SearchQueenPageState.loading:
                         return const CircularProgressIndicatorWidget();
                       case SearchQueenPageState.notFoundQueen:

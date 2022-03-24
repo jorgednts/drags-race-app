@@ -1,8 +1,9 @@
 import '../model/details/queen_details_model.dart';
+import '../model/queen_by_name/queen_by_name_model.dart';
 import '../repository/queen_repository.dart';
 
 abstract class GetQueenByNameUseCase {
-  Future<QueenDetailsModel> call(String queenName);
+  Future<QueenByNameModel> call(String queenName);
 }
 
 class GetQueenByNameUseCaseImpl implements GetQueenByNameUseCase {
@@ -13,6 +14,6 @@ class GetQueenByNameUseCaseImpl implements GetQueenByNameUseCase {
   final QueenRepository _queenRepository;
 
   @override
-  Future<QueenDetailsModel> call(String queenName) async =>
+  Future<QueenByNameModel> call(String queenName) async =>
       _queenRepository.getQueenByName(queenName);
 }

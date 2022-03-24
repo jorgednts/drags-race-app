@@ -1,5 +1,6 @@
 import '../../domain/model/details/queen_details_model.dart';
 import '../../domain/model/queen/queen_model.dart';
+import '../../domain/model/queen_by_name/queen_by_name_model.dart';
 import '../../domain/repository/queen_repository.dart';
 import '../remote/data_source/drags_race_remote_data_source.dart';
 
@@ -21,6 +22,6 @@ class QueenRepositoryImpl implements QueenRepository {
       _dragsRaceRemoteDataSource.getQueenByID(queenID);
 
   @override
-  Future<QueenDetailsModel> getQueenByName(String queenName) async =>
+  Future<QueenByNameModel> getQueenByName(String queenName) async =>
       _dragsRaceRemoteDataSource.getQueenByName(queenName);
 }
