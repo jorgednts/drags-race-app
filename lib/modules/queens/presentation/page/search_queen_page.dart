@@ -81,7 +81,7 @@ class _SearchQueenPageState extends State<SearchQueenPage> {
                         onTap: () {
                           controller.getQueenByName(
                             formatQueenName(
-                              queenName.toString(),
+                              queenName.text.toString(),
                             ),
                           );
                         },
@@ -106,8 +106,7 @@ class _SearchQueenPageState extends State<SearchQueenPage> {
                           message: S.of(context).searchQueenPageInfoText,
                         );
                       case SearchQueenPageState.successQueen:
-                        return const Text('SUCESSO!');
-                    //QueenDetailsWidget(queen: controller.queen!);
+                        return QueenDetailsWidget(queen: controller.queen!);
                       case SearchQueenPageState.loading:
                         return const CircularProgressIndicatorWidget();
                       case SearchQueenPageState.notFoundQueen:

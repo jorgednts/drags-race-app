@@ -1,14 +1,12 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:drags_race_app/modules/queens/domain/model/queen_by_name/queen_by_name_model.dart';
 
 import '../../constants/queens_constants_url_api.dart';
 import '../../data/mapper/remote_to_model.dart';
 import '../../data/remote/data_source/drags_race_remote_data_source.dart';
 import '../../data/remote/model/details/queen_details_response.dart';
 import '../../data/remote/model/queen/queen_response.dart';
-import '../../data/remote/model/queen_by_name/queen_by_name_response.dart';
 import '../../domain/exception/generic_error_status_code_exception.dart';
 import '../../domain/exception/network_error_exception.dart';
 import '../../domain/exception/not_found_queen_exception.dart';
@@ -55,12 +53,14 @@ class DragsRaceRemoteDataSourceImpl implements DragsRaceRemoteDataSource {
   }
 
   @override
-  Future<QueenByNameModel> getQueenByName(String queenName) async {
+  Future<QueenDetailsModel> getQueenByName(String queenName) async {
     try {
       final response = await _dio
           .get('${QueensConstantsUrlApi.queenBaseUrl}?name=$queenName');
-      final queenDetailsResponse = QueenByNameResponse.fromJson(response.data);
-      return queenDetailsResponse.toQueenByNameModel();
+      final List<QueenDetailsResponse> queenDetailsResponse =
+      (response.data.map((item) => QueenDetailsResponse.fromJson(item)).toList())
+          .cast<QueenDetailsResponse>();
+      return queenDetailsResponse[0].toQueenDetailsModel();
     } on DioError catch (dioError, _) {
       if (dioError.type == DioErrorType.response) {
         if (dioError.response?.statusCode == HttpStatus.notFound) {
