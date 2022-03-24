@@ -9,17 +9,20 @@ import 'custom_queen_details_text_widget.dart';
 class QueenBaseInfoWidget extends StatelessWidget {
   const QueenBaseInfoWidget({
     required this.queen,
+    this.frameColor = DragRaceConstantsColors.secondaryColor,
     Key? key,
   }) : super(key: key);
 
   final QueenDetailsModel queen;
+  final Color frameColor;
+
   @override
   Widget build(BuildContext context) => Container(
         height: 200,
         child: Card(
           shape: RoundedRectangleBorder(
-            side: const BorderSide(
-              color: DragRaceConstantsColors.secondaryColor,
+            side: BorderSide(
+              color: frameColor,
               width: 3,
             ),
             borderRadius: BorderRadius.circular(25),

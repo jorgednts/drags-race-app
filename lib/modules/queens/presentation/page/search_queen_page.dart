@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:drags_race_app/modules/queens/presentation/common/search_queen_page_card_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../generated/l10n.dart';
@@ -10,8 +11,9 @@ import '../../domain/repository/queen_repository.dart';
 import '../../domain/use_case/get_queen_by_name_use_case.dart';
 import '../../external/remote_data_source/drags_race_remote_data_source_impl.dart';
 import '../common/circular_progress_indicator_widget.dart';
-import '../common/queen_details_widget.dart';
+import '../common/queen_base_info_widget.dart';
 import '../controller/search_queen_page_controller.dart';
+import 'queen_details_page.dart';
 import 'search_queen_page_state.dart';
 
 class SearchQueenPage extends StatefulWidget {
@@ -106,7 +108,8 @@ class _SearchQueenPageState extends State<SearchQueenPage> {
                           message: S.of(context).searchQueenPageInfoText,
                         );
                       case SearchQueenPageState.successQueen:
-                        return QueenDetailsWidget(queen: controller.queen!);
+                        return SearchQueenPageCardWidget(
+                            queen: controller.queen!);
                       case SearchQueenPageState.loading:
                         return const CircularProgressIndicatorWidget();
                       case SearchQueenPageState.notFoundQueen:

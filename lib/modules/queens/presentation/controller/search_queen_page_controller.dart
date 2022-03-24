@@ -19,7 +19,7 @@ class SearchQueenPageController extends ValueNotifier<SearchQueenPageState> {
   Future<void> getQueenByName(String queenName) async {
     value = SearchQueenPageState.loading;
     try {
-      queen = await _getQueenByNameUseCase.call(formatQueenName(queenName));
+      queen = await _getQueenByNameUseCase.call(queenName);
       value = SearchQueenPageState.successQueen;
     } on NotFoundQueenException {
       value = SearchQueenPageState.notFoundQueen;
@@ -29,7 +29,4 @@ class SearchQueenPageController extends ValueNotifier<SearchQueenPageState> {
       value = SearchQueenPageState.genericError;
     }
   }
-
-  String formatQueenName(String queenName) =>
-      queenName.replaceAll(RegExp(' '), '%20');
 }
