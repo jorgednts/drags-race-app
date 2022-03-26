@@ -1,7 +1,8 @@
-import '../../presentation/page/login_page_state.dart';
+import '../model/auth_state.dart';
+import '../model/user_model.dart';
 
 mixin VerifyLoginUseCase {
-  LoginPageState call(String userEmail, String userPassword);
+  AuthState call(UserModel user);
 }
 
 class VerifyLoginUseCaseImpl implements VerifyLoginUseCase {
@@ -9,14 +10,14 @@ class VerifyLoginUseCaseImpl implements VerifyLoginUseCase {
   static const String standardPassword = 'ornacia123';
 
   @override
-  LoginPageState call(String userEmail, String userPassword) {
-    if (userEmail.isEmpty && userPassword.isEmpty) {
-      return LoginPageState.initialState;
+  AuthState call(UserModel user) {
+    if (user.email.isEmpty && user.password.isEmpty) {
+      return AuthState.empty;
     }
-    if (userEmail == standardEmail && userPassword == standardPassword) {
-      return LoginPageState.successLogin;
+    if (user.email == standardEmail && user.password == standardPassword) {
+      return AuthState.valid;
     } else {
-      return LoginPageState.credentialError;
+      return AuthState.invalid;
     }
   }
 }

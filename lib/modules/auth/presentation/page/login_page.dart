@@ -19,8 +19,8 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   late VerifyLoginUseCase verifyLoginUseCase;
   late LoginPageController controller;
-  final TextEditingController userEmail = TextEditingController();
-  final TextEditingController userPassword = TextEditingController();
+  TextEditingController userEmail = TextEditingController();
+  TextEditingController userPassword = TextEditingController();
 
   @override
   void initState() {
@@ -139,8 +139,10 @@ class _LoginPageState extends State<LoginPage> {
                           primary: DragRaceConstantsColors.secondaryColor,
                         ),
                         onPressed: () {
-                          controller.doLogin(userEmail.text.toString(),
-                              userPassword.text.toString());
+                          controller.doLogin(
+                            userEmail.text.toString(),
+                            userPassword.text.toString(),
+                          );
                           if (controller.value == LoginPageState.successLogin) {
                             goToQueenListPage(context);
                           }
