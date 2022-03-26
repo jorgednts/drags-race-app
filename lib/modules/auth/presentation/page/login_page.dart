@@ -6,6 +6,7 @@ import '../../../queens/presentation/page/queen_list_page.dart';
 import '../../constants/login_page_image_constants.dart';
 import '../../domain/use_case/verify_login_use_case.dart';
 import '../common/custom_text_field_widget.dart';
+import '../common/info_text_widget.dart';
 import '../controller/login_page_controller.dart';
 import 'login_page_state.dart';
 
@@ -27,28 +28,9 @@ class _LoginPageState extends State<LoginPage> {
     super.initState();
     verifyLoginUseCase = VerifyLoginUseCaseImpl();
     controller = LoginPageController(verifyLoginUseCase: verifyLoginUseCase);
-    controller.value = LoginPageState.initialState;
   }
 
-  Widget setInfoText(String infoText) => Container(
-        child: Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20),
-          child: Container(
-            width: MediaQuery.of(context).size.width,
-            child: Text(
-              infoText,
-              style: const TextStyle(
-                fontSize: 18,
-                color: DragRaceConstantsColors.secondaryColor,
-                fontWeight: FontWeight.bold,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ),
-        ),
-      );
-
-  Future<void> goToQueenListPage(BuildContext context) async {
+  Future<void> _goToQueenListPage(BuildContext context) async {
     await Future.delayed(
       const Duration(seconds: 2),
     );
@@ -144,7 +126,7 @@ class _LoginPageState extends State<LoginPage> {
                             userPassword.text.toString(),
                           );
                           if (controller.value == LoginPageState.successLogin) {
-                            goToQueenListPage(context);
+                            _goToQueenListPage(context);
                           }
                         },
                         child: Text(
@@ -161,16 +143,21 @@ class _LoginPageState extends State<LoginPage> {
                         builder: (context, state, _) {
                           switch (state) {
                             case LoginPageState.initialState:
-                              return setInfoText(
-                                  S.of(context).loginPageInitialInfoText);
+                              return InfoTextWidget(
+                                infoText:
+                                    S.of(context).loginPageInitialInfoText,
+                              );
                             case LoginPageState.credentialError:
-                              return setInfoText(S
-                                  .of(context)
-                                  .loginPageInvalidCredentialsInfoText);
+                              return InfoTextWidget(
+                                infoText: S
+                                    .of(context)
+                                    .loginPageInvalidCredentialsInfoText,
+                              );
                             case LoginPageState.successLogin:
-                              return setInfoText(S
-                                  .of(context)
-                                  .loginPageSuccessfulLoginInfoText);
+                              return InfoTextWidget(
+                                  infoText: S
+                                      .of(context)
+                                      .loginPageSuccessfulLoginInfoText);
                           }
                         }),
                   )
