@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:drags_race_app/modules/queens/presentation/common/search_queen_page_card_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../generated/l10n.dart';
@@ -11,9 +10,9 @@ import '../../domain/repository/queen_repository.dart';
 import '../../domain/use_case/get_queen_by_name_use_case.dart';
 import '../../external/remote_data_source/drags_race_remote_data_source_impl.dart';
 import '../common/circular_progress_indicator_widget.dart';
-import '../common/queen_base_info_widget.dart';
+import '../common/search_queen_page_card_widget.dart';
+import '../common/search_queen_page_state_message_widget.dart';
 import '../controller/search_queen_page_controller.dart';
-import 'queen_details_page.dart';
 import 'search_queen_page_state.dart';
 
 class SearchQueenPage extends StatefulWidget {
@@ -131,32 +130,7 @@ class _SearchQueenPageState extends State<SearchQueenPage> {
       );
 
   String formatQueenName(String queenName) {
-    final formatedQueenName = queenName.replaceAll(RegExp(' '), '%20');
-    return formatedQueenName;
+    final formatQueenName = queenName.replaceAll(RegExp(' '), '%20');
+    return formatQueenName;
   }
-}
-
-class SearchQueenPageStateMessageWidget extends StatelessWidget {
-  const SearchQueenPageStateMessageWidget({
-    required this.message,
-    Key? key,
-  }) : super(key: key);
-
-  final String message;
-
-  @override
-  Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.only(top: 200),
-        child: Container(
-          width: 300,
-          child: Text(
-            message,
-            style: const TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-                color: DragRaceConstantsColors.primaryColor),
-            textAlign: TextAlign.center,
-          ),
-        ),
-      );
 }

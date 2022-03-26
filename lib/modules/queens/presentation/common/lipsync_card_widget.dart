@@ -4,6 +4,7 @@ import '../../../../generated/l10n.dart';
 import '../../../common/drag_race_constants/drag_race_constants_colors.dart';
 import '../../domain/model/details/lipsync_model.dart';
 import 'custom_queen_details_text_widget.dart';
+import 'lipsync_result_widget.dart';
 
 class LipsyncCardWidget extends StatelessWidget {
   const LipsyncCardWidget({
@@ -12,8 +13,6 @@ class LipsyncCardWidget extends StatelessWidget {
   }) : super(key: key);
 
   final LipsyncModel lipsync;
-  static const shantay = 'Shantay, you stay!';
-  static const sashay = 'Sashay away!';
 
   @override
   Widget build(BuildContext context) => Container(
@@ -62,7 +61,10 @@ class LipsyncCardWidget extends StatelessWidget {
                     children: [
                       CustomQueenDetailsTextWidget(
                           text: S.of(context).queenLipsyncInfoResult),
-                      getLipsyncResult(lipsync.won),
+                      LipsyncResultWidget(
+                        resultText: setLipsyncResultText(lipsync.won, context),
+                        color: setLipsyncResultColor(lipsync.won),
+                      ),
                     ],
                   ),
                 ),
@@ -72,25 +74,19 @@ class LipsyncCardWidget extends StatelessWidget {
         ),
       );
 
-  Widget getLipsyncResult(bool lipsyncResult) {
+  String setLipsyncResultText(bool lipsyncResult, BuildContext context) {
     if (lipsyncResult == true) {
-      return const Text(
-        shantay,
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 15,
-          color: Colors.greenAccent,
-        ),
-      );
+      return S.of(context).queenLipsyncResultShantay;
     } else {
-      return const Text(
-        sashay,
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 15,
-          color: Colors.pinkAccent,
-        ),
-      );
+      return S.of(context).queenLipsyncResultSashay;
+    }
+  }
+
+  Color setLipsyncResultColor(bool lipsyncResult) {
+    if (lipsyncResult == true) {
+      return Colors.greenAccent;
+    } else {
+      return Colors.pinkAccent;
     }
   }
 }

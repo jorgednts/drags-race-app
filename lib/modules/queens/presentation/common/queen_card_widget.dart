@@ -38,7 +38,7 @@ class QueenCardWidget extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 3),
                   child: Text(
-                    '#${queen.id.toString()}',
+                    queenIdToString(queen.id),
                     textAlign: TextAlign.center,
                     style: const TextStyle(
                         fontWeight: FontWeight.bold, color: Colors.white),
@@ -78,4 +78,7 @@ class QueenCardWidget extends StatelessWidget {
           ),
         ),
       );
+
+  String queenIdToString(int queenId)=> queenId.toString();
+
 }

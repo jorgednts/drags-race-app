@@ -299,6 +299,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Sashay away!`
+  String get queenLipsyncResultSashay {
+    return Intl.message(
+      'Sashay away!',
+      name: 'queenLipsyncResultSashay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Shantay, you stay!`
+  String get queenLipsyncResultShantay {
+    return Intl.message(
+      'Shantay, you stay!',
+      name: 'queenLipsyncResultShantay',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

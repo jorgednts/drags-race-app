@@ -9,7 +9,8 @@ import '../page/queen_list_page_state.dart';
 class QueenListPageController extends ValueNotifier<QueenListPageState> {
   QueenListPageController({
     required GetAllQueensUseCase getAllQueensUseCase,
-  })  : _getAllQueensUseCase = getAllQueensUseCase,
+  })
+      : _getAllQueensUseCase = getAllQueensUseCase,
         super(QueenListPageState.loading);
 
   final GetAllQueensUseCase _getAllQueensUseCase;

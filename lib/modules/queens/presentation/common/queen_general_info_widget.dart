@@ -5,6 +5,7 @@ import '../../../common/drag_race_constants/drag_race_constants_colors.dart';
 import '../../domain/model/details/queen_details_model.dart';
 import '../../domain/model/details/season_model.dart';
 import 'custom_queen_details_text_widget.dart';
+import 'thumb_icon_widget.dart';
 
 class QueenGeneralInfoWidget extends StatelessWidget {
   const QueenGeneralInfoWidget({
@@ -38,7 +39,10 @@ class QueenGeneralInfoWidget extends StatelessWidget {
                         fontSize: 18,
                         width: 180,
                       ),
-                      setIcon(queen.winner),
+                      ThumbIconWidget(
+                        icon: setIcon(queen.winner),
+                        color: setIconColor(queen.winner),
+                      ),
                     ],
                   ),
                 ),
@@ -51,7 +55,10 @@ class QueenGeneralInfoWidget extends StatelessWidget {
                         fontSize: 18,
                         width: 180,
                       ),
-                      setIcon(queen.missCongeniality),
+                      ThumbIconWidget(
+                        icon: setIcon(queen.missCongeniality),
+                        color: setIconColor(queen.missCongeniality),
+                      ),
                     ],
                   ),
                 ),
@@ -67,7 +74,7 @@ class QueenGeneralInfoWidget extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 30),
                         child: Text(
-                          '#${getQueenBestPlacement(queen.seasonsList)}',
+                          _getQueenBestPlacement(queen.seasonsList),
                           style: const TextStyle(
                               color: DragRaceConstantsColors.secondaryColor,
                               fontSize: 18,
@@ -83,42 +90,32 @@ class QueenGeneralInfoWidget extends StatelessWidget {
         ),
       );
 
-  Widget setIcon(bool isPositive) {
+  IconData setIcon(bool isPositive) {
     if (isPositive == true) {
-      return const Padding(
-        padding: EdgeInsets.only(left: 30),
-        child: Icon(
-          Icons.thumb_up_alt_rounded,
-          color: Colors.greenAccent,
-        ),
-      );
+      return Icons.thumb_up_alt_rounded;
     }
     if (isPositive == false) {
-      return const Padding(
-        padding: EdgeInsets.only(left: 30),
-        child: Icon(
-          Icons.thumb_down_alt_rounded,
-          color: Colors.pink,
-        ),
-      );
+      return Icons.thumb_down_alt_rounded;
     } else {
-      return const Padding(
-        padding: EdgeInsets.only(left: 30),
-        child: Icon(
-          Icons.circle,
-          color: Colors.grey,
-        ),
-      );
+      return Icons.circle;
     }
   }
 
-  int getQueenBestPlacement(List<SeasonModel> seasonsList) {
+  Color setIconColor(bool isPositive) {
+    if (isPositive == true || isPositive == false) {
+      return Colors.pink;
+    } else {
+      return Colors.grey;
+    }
+  }
+
+  String _getQueenBestPlacement(List<SeasonModel> seasonsList) {
     var bestPlace = seasonsList[0].place;
     for (final season in seasonsList) {
       if (season.place < bestPlace) {
         bestPlace = season.place;
       }
     }
-    return bestPlace;
+    return bestPlace.toString();
   }
 }

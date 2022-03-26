@@ -24,5 +24,7 @@
   "queenGeneralInfoBestPlacement": "Best Placement:",
   "queenLipsyncInfoSongName": "Song:",
   "queenLipsyncInfoSongArtist": "Artist:",
-  "queenLipsyncInfoResult": "Result:"
+  "queenLipsyncInfoResult": "Result:",
+  "queenLipsyncResultSashay": "Sashay away!",
+  "queenLipsyncResultShantay": "Shantay, you stay!"
 }
