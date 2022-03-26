@@ -61,12 +61,12 @@ class DragsRaceRemoteDataSourceImpl implements DragsRaceRemoteDataSource {
               .map((item) => QueenDetailsResponse.fromJson(item))
               .toList())
           .cast<QueenDetailsResponse>();
+      if (queenDetailsResponse.isEmpty) {
+        throw NotFoundQueenException();
+      }
       return queenDetailsResponse[0].toQueenDetailsModel();
     } on DioError catch (dioError, _) {
       if (dioError.type == DioErrorType.response) {
-        if (dioError.response?.statusCode == HttpStatus.notFound) {
-          throw NotFoundQueenException();
-        }
         throw GenericErrorStatusCodeException();
       } else {
         throw NetworkErrorException();
