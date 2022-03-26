@@ -22,4 +22,4 @@ Telas do app:
 
 ##
 
-<img height="480px" src="assets/images_read_me/image.jpg"> <img height="480px" src="assets/images_read_me/image1.jpg"> <img height="480px" src="assets/images_read_me/image2.jpg"> <img height="480px" src="assets/images_read_me/image3.jpg"> <img height="480px" src="assets/images_read_me/image4.jpg"> <img height="480px" src="assets/images_read_me/image5.jpg"> <img height="480px" src="assets/images_read_me/image6.jpg"> <img height="480px" src="assets/images_read_me/image7.jpg"> <img height="480px" src="assets/images_read_me/image8.jpg">
+<img height="480px" src="assets/images_read_me/image.png"> <img height="480px" src="assets/images_read_me/image1.png"> <img height="480px" src="assets/images_read_me/image2.png"> <img height="480px" src="assets/images_read_me/image3.png"> <img height="480px" src="assets/images_read_me/image4.png"> <img height="480px" src="assets/images_read_me/image5.png"> <img height="480px" src="assets/images_read_me/image6.png"> <img height="480px" src="assets/images_read_me/image7.png"> <img height="480px" src="assets/images_read_me/image8.png">
