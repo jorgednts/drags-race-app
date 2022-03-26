@@ -1,7 +1,7 @@
 import '../model/queen/queen_model.dart';
 import '../repository/queen_repository.dart';
 
-abstract class GetAllQueensUseCase {
+mixin GetAllQueensUseCase {
   Future<List<QueenModel>> call();
 }
 

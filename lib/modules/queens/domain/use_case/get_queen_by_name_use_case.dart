@@ -1,7 +1,7 @@
 import '../model/details/queen_details_model.dart';
 import '../repository/queen_repository.dart';
 
-abstract class GetQueenByNameUseCase {
+mixin GetQueenByNameUseCase {
   Future<QueenDetailsModel> call(String queenName);
 }
 
