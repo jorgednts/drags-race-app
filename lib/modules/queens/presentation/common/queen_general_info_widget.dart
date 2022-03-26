@@ -102,9 +102,12 @@ class QueenGeneralInfoWidget extends StatelessWidget {
   }
 
   Color setIconColor(bool isPositive) {
-    if (isPositive == true || isPositive == false) {
+    if (isPositive == true) {
       return Colors.pink;
-    } else {
+    }if(isPositive == false){
+      return Colors.greenAccent;
+    }
+    else {
       return Colors.grey;
     }
   }
