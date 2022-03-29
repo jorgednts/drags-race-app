@@ -1,3 +1,5 @@
+Em andamento: Injeção de dependência (Flutter Modular)
+##
 App Flutter RuPaul's Drag Race
 
 Este app tem como objetivo obter informações das participantes do reality show RuPaul's Drag Race.
