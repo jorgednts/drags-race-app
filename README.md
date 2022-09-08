@@ -14,13 +14,14 @@ Telas do app:
 
 4. Tela de Busca de Queens: É realizada uma requisição para buscar a queen digitada pelo usuário.
 
-2. Tela de detalhes de uma Queen:  São mostrados os detalhes sobre a queen clicada na tela anterior (Tela de Listagem ou de Busca);
+5. Tela de detalhes de uma Queen:  São mostrados os detalhes sobre a queen clicada na tela anterior (Tela de Listagem ou de Busca);
 
 ##
 
 - Clean Architecture;
 - Para requisições API REST: Dio;
 - Para gerenciamento de estado: ValueNotifier;
+- Injeção de Dependência e Gerenciamento de Rotas: Flutter Modular;
 
 ##
 
