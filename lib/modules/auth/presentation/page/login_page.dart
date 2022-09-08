@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../../../generated/l10n.dart';
 import '../../../common/drag_race_constants/drag_race_constants_colors.dart';
-import '../../../queens/presentation/page/queen_list_page.dart';
+import '../../../common/routes/app_routes.dart';
 import '../../constants/login_page_image_constants.dart';
-import '../../domain/use_case/verify_login_use_case.dart';
 import '../common/custom_text_field_widget.dart';
 import '../common/info_text_widget.dart';
 import '../controller/login_page_controller.dart';
@@ -17,29 +17,15 @@ class LoginPage extends StatefulWidget {
   State<LoginPage> createState() => _LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
-  late VerifyLoginUseCase verifyLoginUseCase;
-  late LoginPageController controller;
+class _LoginPageState extends ModularState<LoginPage, LoginPageController> {
   TextEditingController userEmail = TextEditingController();
   TextEditingController userPassword = TextEditingController();
-
-  @override
-  void initState() {
-    super.initState();
-    verifyLoginUseCase = VerifyLoginUseCaseImpl();
-    controller = LoginPageController(verifyLoginUseCase: verifyLoginUseCase);
-  }
 
   Future<void> _goToQueenListPage(BuildContext context) async {
     await Future.delayed(
       const Duration(seconds: 2),
     );
-    await Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const QueenListPage(),
-      ),
-    );
+    await Modular.to.pushNamed(AppConstantsRoutes.queensModule);
   }
 
   @override
@@ -167,4 +153,10 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ),
       );
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
 }

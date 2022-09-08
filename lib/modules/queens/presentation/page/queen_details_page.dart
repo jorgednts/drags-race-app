@@ -67,29 +67,26 @@ class _QueenDetailsPageState extends State<QueenDetailsPage> {
               ],
             ),
           ),
+          alignment: Alignment.center,
           child: SingleChildScrollView(
-            child: Column(
-              children: [
-                ValueListenableBuilder<QueenDetailsPageState>(
-                    valueListenable: controller,
-                    builder: (context, state, _) {
-                      switch (state) {
-                        case QueenDetailsPageState.loading:
-                          return const CircularProgressIndicatorWidget();
-                        case QueenDetailsPageState.successQueenList:
-                          return QueenDetailsWidget(queen: controller.queen!);
-                        case QueenDetailsPageState.genericError:
-                          return ErrorTextWidget(
-                            errorText: S.of(context).genericErrorText,
-                          );
-                        case QueenDetailsPageState.networkError:
-                          return ErrorTextWidget(
-                            errorText: S.of(context).networkErrorText,
-                          );
-                      }
-                    }),
-              ],
-            ),
+            child: ValueListenableBuilder<QueenDetailsPageState>(
+                valueListenable: controller,
+                builder: (context, state, _) {
+                  switch (state) {
+                    case QueenDetailsPageState.loading:
+                      return const CircularProgressIndicatorWidget();
+                    case QueenDetailsPageState.successQueenList:
+                      return QueenDetailsWidget(queen: controller.queen!);
+                    case QueenDetailsPageState.genericError:
+                      return ErrorTextWidget(
+                        errorText: S.of(context).genericErrorText,
+                      );
+                    case QueenDetailsPageState.networkError:
+                      return ErrorTextWidget(
+                        errorText: S.of(context).networkErrorText,
+                      );
+                  }
+                }),
           ),
         ),
       );

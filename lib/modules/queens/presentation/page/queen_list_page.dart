@@ -1,20 +1,15 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../../../generated/l10n.dart';
 import '../../../common/drag_race_constants/drag_race_constants_colors.dart';
 import '../../../common/drag_race_constants/drag_race_constants_strings.dart';
-import '../../data/remote/data_source/drags_race_remote_data_source.dart';
-import '../../data/repository/queen_repository_impl.dart';
-import '../../domain/repository/queen_repository.dart';
-import '../../domain/use_case/get_all_queens_use_case.dart';
-import '../../external/remote_data_source/drags_race_remote_data_source_impl.dart';
+import '../../constants/queens_constants_routes.dart';
 import '../common/circular_progress_indicator_widget.dart';
 import '../common/error_text_widget.dart';
 import '../common/queen_list_widget.dart';
 import '../controller/queen_list_page_controller.dart';
 import 'queen_list_page_state.dart';
-import 'search_queen_page.dart';
 
 class QueenListPage extends StatefulWidget {
   const QueenListPage({Key? key}) : super(key: key);
@@ -23,32 +18,16 @@ class QueenListPage extends StatefulWidget {
   State<QueenListPage> createState() => _QueenListPageState();
 }
 
-class _QueenListPageState extends State<QueenListPage> {
-  late DragsRaceRemoteDataSource dragsRaceRemoteDataSource;
-  late QueenRepository queenRepository;
-  late GetAllQueensUseCase getAllQueensUseCase;
-  late QueenListPageController controller;
-
+class _QueenListPageState
+    extends ModularState<QueenListPage, QueenListPageController> {
   @override
   void initState() {
     super.initState();
-    dragsRaceRemoteDataSource = DragsRaceRemoteDataSourceImpl(dio: Dio());
-    queenRepository = QueenRepositoryImpl(
-        dragsRaceRemoteDataSource: dragsRaceRemoteDataSource);
-    getAllQueensUseCase =
-        GetAllQueensUseCaseImpl(queenRepository: queenRepository);
-    controller =
-        QueenListPageController(getAllQueensUseCase: getAllQueensUseCase);
     controller.getQueenList();
   }
 
   void goToSearchQueenPage(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const SearchQueenPage(),
-      ),
-    );
+    Modular.to.pushNamed(QueensConstantsRoutes.queenSearch);
   }
 
   @override

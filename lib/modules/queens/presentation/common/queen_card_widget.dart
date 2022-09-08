@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../../common/drag_race_constants/drag_race_constants_colors.dart';
+import '../../constants/queens_constants_routes.dart';
 import '../../domain/model/queen/queen_model.dart';
-import '../page/queen_details_page.dart';
 
 class QueenCardWidget extends StatelessWidget {
   const QueenCardWidget({
@@ -15,13 +16,9 @@ class QueenCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => GestureDetector(
         onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => QueenDetailsPage(
-                queenID: queen.id,
-              ),
-            ),
+          Modular.to.pushNamed(
+            QueensConstantsRoutes.queenDetails,
+            arguments: queen.id,
           );
         },
         child: Container(
@@ -79,6 +76,5 @@ class QueenCardWidget extends StatelessWidget {
         ),
       );
 
-  String queenIdToString(int queenId)=> queenId.toString();
-
+  String queenIdToString(int queenId) => queenId.toString();
 }

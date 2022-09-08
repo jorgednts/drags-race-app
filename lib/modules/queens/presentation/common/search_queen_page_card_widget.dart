@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../../common/drag_race_constants/drag_race_constants_colors.dart';
+import '../../constants/queens_constants_routes.dart';
 import '../../domain/model/details/queen_details_model.dart';
-import '../page/queen_details_page.dart';
 import 'queen_base_info_widget.dart';
 
 class SearchQueenPageCardWidget extends StatelessWidget {
@@ -18,14 +19,7 @@ class SearchQueenPageCardWidget extends StatelessWidget {
         padding: const EdgeInsets.only(top: 10),
         child: GestureDetector(
           onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => QueenDetailsPage(
-                  queenID: queen.id,
-                ),
-              ),
-            );
+            Modular.to.navigate(QueensConstantsRoutes.queenDetailsPage);
           },
           child: QueenBaseInfoWidget(
             queen: queen,
