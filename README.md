@@ -1,4 +1,3 @@
-Em andamento: Injeção de dependência (Flutter Modular)
 ##
 App Flutter RuPaul's Drag Race
 
