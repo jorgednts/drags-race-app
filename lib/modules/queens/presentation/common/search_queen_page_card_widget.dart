@@ -19,7 +19,10 @@ class SearchQueenPageCardWidget extends StatelessWidget {
         padding: const EdgeInsets.only(top: 10),
         child: GestureDetector(
           onTap: () {
-            Modular.to.navigate(QueensConstantsRoutes.queenDetailsPage);
+            Modular.to.pushNamed(
+              QueensConstantsRoutes.queenDetails,
+              arguments: queen.id,
+            );
           },
           child: QueenBaseInfoWidget(
             queen: queen,
