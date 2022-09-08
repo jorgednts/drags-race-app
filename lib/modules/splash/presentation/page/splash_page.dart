@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../../common/drag_race_constants/drag_race_constants_colors.dart';
 import '../../constants/splash_constants_images.dart';
@@ -11,13 +12,11 @@ class SplashPage extends StatefulWidget {
   State<SplashPage> createState() => _SplashPageState();
 }
 
-class _SplashPageState extends State<SplashPage> {
-  final SplashController control = SplashController();
-
+class _SplashPageState extends ModularState<SplashPage, SplashController> {
   @override
   void initState() {
     super.initState();
-    control.goToLoginPage(context);
+    controller.goToLoginModule(context);
   }
 
   @override

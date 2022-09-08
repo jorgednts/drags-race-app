@@ -1,14 +1,9 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../../../generated/l10n.dart';
 import '../../../common/drag_race_constants/drag_race_constants_colors.dart';
 import '../../../common/drag_race_constants/drag_race_constants_strings.dart';
-import '../../data/remote/data_source/drags_race_remote_data_source.dart';
-import '../../data/repository/queen_repository_impl.dart';
-import '../../domain/repository/queen_repository.dart';
-import '../../domain/use_case/get_queen_by_name_use_case.dart';
-import '../../external/remote_data_source/drags_race_remote_data_source_impl.dart';
 import '../common/circular_progress_indicator_widget.dart';
 import '../common/search_queen_page_card_widget.dart';
 import '../common/search_queen_page_state_message_widget.dart';
@@ -22,24 +17,14 @@ class SearchQueenPage extends StatefulWidget {
   State<SearchQueenPage> createState() => _SearchQueenPageState();
 }
 
-class _SearchQueenPageState extends State<SearchQueenPage> {
-  late DragsRaceRemoteDataSource dragsRaceRemoteDataSource;
-  late QueenRepository queenRepository;
-  late GetQueenByNameUseCase getQueenByNameUseCase;
-  late SearchQueenPageController controller;
+class _SearchQueenPageState
+    extends ModularState<SearchQueenPage, SearchQueenPageController> {
   late TextEditingController queenName;
 
   @override
   void initState() {
     super.initState();
-    dragsRaceRemoteDataSource = DragsRaceRemoteDataSourceImpl(dio: Dio());
-    queenRepository = QueenRepositoryImpl(
-        dragsRaceRemoteDataSource: dragsRaceRemoteDataSource);
-    getQueenByNameUseCase =
-        GetQueenByNameUseCaseImpl(queenRepository: queenRepository);
     queenName = TextEditingController();
-    controller =
-        SearchQueenPageController(getQueenByNameUseCase: getQueenByNameUseCase);
   }
 
   @override

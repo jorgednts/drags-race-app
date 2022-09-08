@@ -22,5 +22,4 @@ class LoginPageController extends ValueNotifier<LoginPageState> {
     }
     return value;
   }
-
 }
