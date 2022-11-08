@@ -1,13 +1,27 @@
-import 'package:drags_race_app/di/app_module.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:hive/hive.dart';
+import 'package:path_provider/path_provider.dart';
 
+import 'di/app_module.dart';
 import 'generated/l10n.dart';
 import 'modules/common/drag_race_constants/drag_race_constants_colors.dart';
 import 'modules/common/drag_race_constants/drag_race_constants_fonts.dart';
+import 'modules/queens/domain/model/details/lipsync_cache.dart';
+import 'modules/queens/domain/model/details/queen_details_cache.dart';
+import 'modules/queens/domain/model/details/season_cache.dart';
+import 'modules/queens/domain/model/queen/queen_cache.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  Hive
+    ..init((await getApplicationDocumentsDirectory()).path)
+    ..registerAdapter<QueenCache>(QueenCacheAdapter())
+    ..registerAdapter<QueenDetailsCache>(QueenDetailsCacheAdapter())
+    ..registerAdapter<SeasonCache>(SeasonCacheAdapter())
+    ..registerAdapter<LipsyncCache>(LipsyncCacheAdapter());
+
   runApp(
     ModularApp(
       module: AppModule(),

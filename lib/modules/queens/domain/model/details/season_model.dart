@@ -1,4 +1,3 @@
-
 class SeasonModel {
   SeasonModel({
     required this.seasonNumber,

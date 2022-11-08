@@ -18,8 +18,10 @@ class QueenListPage extends StatefulWidget {
   State<QueenListPage> createState() => _QueenListPageState();
 }
 
-class _QueenListPageState
-    extends ModularState<QueenListPage, QueenListPageController> {
+class _QueenListPageState extends State<QueenListPage> {
+  final QueenListPageController controller =
+      Modular.get<QueenListPageController>();
+
   @override
   void initState() {
     super.initState();

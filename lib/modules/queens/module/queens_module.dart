@@ -1,13 +1,16 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:hive/hive.dart';
 
 import '../constants/queens_constants_routes.dart';
+import '../data/remote/cache/drags_race_cache_data_source.dart';
 import '../data/remote/data_source/drags_race_remote_data_source.dart';
 import '../data/repository/queen_repository_impl.dart';
 import '../domain/repository/queen_repository.dart';
 import '../domain/use_case/get_all_queens_use_case.dart';
 import '../domain/use_case/get_queen_by_id_use_case.dart';
 import '../domain/use_case/get_queen_by_name_use_case.dart';
+import '../external/cache/drags_race_cache_data_source_impl.dart';
 import '../external/remote_data_source/drags_race_remote_data_source_impl.dart';
 import '../presentation/controller/queen_details_controller.dart';
 import '../presentation/controller/queen_list_page_controller.dart';
@@ -20,11 +23,18 @@ class QueensModule extends Module {
   @override
   List<Bind> get binds => [
         Bind.lazySingleton((i) => Dio()),
+        Bind.lazySingleton((i) => Hive),
         Bind.lazySingleton<DragsRaceRemoteDataSource>(
           (i) => DragsRaceRemoteDataSourceImpl(dio: i()),
         ),
+        Bind.lazySingleton<DragsRaceCacheDataSource>(
+          (i) => DragsRaceCacheDataSourceImpl(hiveInterface: i()),
+        ),
         Bind.lazySingleton<QueenRepository>(
-          (i) => QueenRepositoryImpl(dragsRaceRemoteDataSource: i()),
+          (i) => QueenRepositoryImpl(
+            dragsRaceRemoteDataSource: i(),
+            dragsRaceCacheDataSource: i(),
+          ),
         ),
         Bind.lazySingleton<GetAllQueensUseCase>(
           (i) => GetAllQueensUseCaseImpl(queenRepository: i()),

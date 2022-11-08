@@ -1,13 +1,8 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../../../generated/l10n.dart';
 import '../../../common/drag_race_constants/drag_race_constants_colors.dart';
-import '../../data/remote/data_source/drags_race_remote_data_source.dart';
-import '../../data/repository/queen_repository_impl.dart';
-import '../../domain/repository/queen_repository.dart';
-import '../../domain/use_case/get_queen_by_id_use_case.dart';
-import '../../external/remote_data_source/drags_race_remote_data_source_impl.dart';
 import '../common/circular_progress_indicator_widget.dart';
 import '../common/error_text_widget.dart';
 import '../common/queen_details_widget.dart';
@@ -27,21 +22,12 @@ class QueenDetailsPage extends StatefulWidget {
 }
 
 class _QueenDetailsPageState extends State<QueenDetailsPage> {
-  late DragsRaceRemoteDataSource dragsRaceRemoteDataSource;
-  late QueenRepository queenRepository;
-  late GetQueenByIdUseCase getQueenByIdUseCase;
-  late QueenDetailsController controller;
+  final QueenDetailsController controller =
+      Modular.get<QueenDetailsController>();
 
   @override
   void initState() {
     super.initState();
-    dragsRaceRemoteDataSource = DragsRaceRemoteDataSourceImpl(dio: Dio());
-    queenRepository = QueenRepositoryImpl(
-        dragsRaceRemoteDataSource: dragsRaceRemoteDataSource);
-    getQueenByIdUseCase =
-        GetQueenByIdUseCaseImpl(queenRepository: queenRepository);
-    controller =
-        QueenDetailsController(getQueenByIdUseCase: getQueenByIdUseCase);
     controller.getQueenByID(widget.queenID);
   }
 

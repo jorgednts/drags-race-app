@@ -21,6 +21,7 @@ Telas do app:
 - Para requisições API REST: Dio;
 - Para gerenciamento de estado: ValueNotifier;
 - Injeção de Dependência e Gerenciamento de Rotas: Flutter Modular;
+- Banco de dados local: Hive.
 
 ##
 
