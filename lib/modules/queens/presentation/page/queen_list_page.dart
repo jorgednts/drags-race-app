@@ -45,18 +45,26 @@ class _QueenListPageState extends State<QueenListPage> {
           ),
           centerTitle: true,
           actions: [
-            GestureDetector(
-              child: const Padding(
-                padding: EdgeInsets.only(top: 8, right: 12, bottom: 8),
-                child: Icon(
-                  Icons.search_rounded,
-                  size: 30,
-                ),
-              ),
-              onTap: () {
-                goToSearchQueenPage(context);
-              },
-            ),
+            ValueListenableBuilder(
+                valueListenable: controller,
+                builder: (context, state, _) {
+                  if (state == QueenListPageState.successQueenList) {
+                    return GestureDetector(
+                      child: const Padding(
+                        padding: EdgeInsets.only(top: 8, right: 12, bottom: 8),
+                        child: Icon(
+                          Icons.search_rounded,
+                          size: 30,
+                        ),
+                      ),
+                      onTap: () {
+                        goToSearchQueenPage(context);
+                      },
+                    );
+                  } else {
+                    return const Padding(padding: EdgeInsets.zero);
+                  }
+                }),
           ],
         ),
         body: ValueListenableBuilder<QueenListPageState>(

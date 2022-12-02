@@ -1,4 +1,3 @@
-import 'package:drags_race_app/modules/queens/presentation/common/queen_list_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -6,6 +5,7 @@ import '../../../../generated/l10n.dart';
 import '../../../common/drag_race_constants/drag_race_constants_colors.dart';
 import '../../../common/drag_race_constants/drag_race_constants_strings.dart';
 import '../../domain/model/queen/queen_model.dart';
+import '../common/queen_list_widget.dart';
 import '../common/search_queen_page_state_message_widget.dart';
 import '../controller/search_queen_page_controller.dart';
 import 'search_queen_page_state.dart';
@@ -85,17 +85,9 @@ class _SearchQueenPageState extends State<SearchQueenPage> {
                       case SearchQueenPageState.successQueen:
                         return QueenListWidget(
                             queenList: controller.filteredQueenList);
-                      // case SearchQueenPageState.loading:
-                      //   return const CircularProgressIndicatorWidget();
                       case SearchQueenPageState.notFoundQueen:
                         return SearchQueenPageStateMessageWidget(
                             message: S.of(context).notFoundErrorText);
-                      // case SearchQueenPageState.genericError:
-                      //   return SearchQueenPageStateMessageWidget(
-                      //       message: S.of(context).genericErrorText);
-                      // case SearchQueenPageState.networkError:
-                      //   return SearchQueenPageStateMessageWidget(
-                      //       message: S.of(context).networkErrorText);
                     }
                   },
                 ),
@@ -104,9 +96,4 @@ class _SearchQueenPageState extends State<SearchQueenPage> {
           ),
         ),
       );
-
-  String formatQueenName(String queenName) {
-    final formatQueenName = queenName.replaceAll(RegExp(' '), '%20');
-    return formatQueenName;
-  }
 }
