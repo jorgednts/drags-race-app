@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 
-import '../controller/queen_list_page_controller.dart';
+import '../../domain/model/queen/queen_model.dart';
 import 'queen_card_widget.dart';
 
 class QueenListWidget extends StatelessWidget {
   const QueenListWidget({
-    required this.controller,
+    required this.queenList,
     Key? key,
   }) : super(key: key);
 
-  final QueenListPageController controller;
+  final List<QueenModel> queenList;
 
   @override
   Widget build(BuildContext context) => Container(
         height: MediaQuery.of(context).size.height,
         child: GridView.builder(
           shrinkWrap: true,
-          itemCount: controller.queenList.length,
+          itemCount: queenList.length,
           itemBuilder: (context, index) =>
-              QueenCardWidget(queen: controller.queenList[index]),
+              QueenCardWidget(queen: queenList[index]),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               mainAxisExtent: 320,
               mainAxisSpacing: 5,

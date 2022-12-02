@@ -68,7 +68,7 @@ class QueensModule extends Module {
         ),
         ChildRoute(
           QueensConstantsRoutes.queenSearchPage,
-          child: (context, args) => const SearchQueenPage(),
+          child: (context, args) => SearchQueenPage(queenList: args.data),
         ),
       ];
 }

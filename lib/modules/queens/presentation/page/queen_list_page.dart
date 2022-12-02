@@ -29,7 +29,10 @@ class _QueenListPageState extends State<QueenListPage> {
   }
 
   void goToSearchQueenPage(BuildContext context) {
-    Modular.to.pushNamed(QueensConstantsRoutes.queenSearch);
+    Modular.to.pushNamed(
+      QueensConstantsRoutes.queenSearch,
+      arguments: controller.queenList,
+    );
   }
 
   @override
@@ -70,7 +73,7 @@ class _QueenListPageState extends State<QueenListPage> {
                           const EdgeInsets.only(top: 15, left: 20, right: 20),
                       child: Column(
                         children: [
-                          QueenListWidget(controller: controller),
+                          QueenListWidget(queenList: controller.queenList),
                         ],
                       ),
                     ),
