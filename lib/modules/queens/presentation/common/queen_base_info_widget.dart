@@ -48,75 +48,79 @@ class QueenBaseInfoWidget extends StatelessWidget {
                   placeholderFit: BoxFit.fitWidth,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 15),
-                      child: Row(
-                        children: [
-                          CustomQueenDetailsTextWidget(
-                            text: S.of(context).queenDetailsID,
-                          ),
-                          Text(
-                            queen.id.toString(),
-                            style: const TextStyle(fontSize: 15),
-                          ),
-                        ],
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 15),
+                        child: Row(
+                          children: [
+                            CustomQueenDetailsTextWidget(
+                              text: S.of(context).queenDetailsID,
+                            ),
+                            Text(
+                              queen.id.toString(),
+                              style: const TextStyle(fontSize: 15),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 15),
-                      child: Row(
-                        children: [
-                          CustomQueenDetailsTextWidget(
-                            text: S.of(context).queenDetailsName,
-                          ),
-                          Text(
-                            queen.name,
-                            style: const TextStyle(fontSize: 15),
-                          ),
-                        ],
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 15),
+                        child: Row(
+                          children: [
+                            CustomQueenDetailsTextWidget(
+                              text: S.of(context).queenDetailsName,
+                            ),
+                            Expanded(
+                              child: Text(
+                                queen.name,
+                                style: const TextStyle(fontSize: 15),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 15),
-                      child: Row(
-                        children: [
-                          CustomQueenDetailsTextWidget(
-                            text: S.of(context).queenDetailsSeasons,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Wrap(
-                                children: List.generate(
-                                  queen.seasonsList.length,
-                                  (index) => Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 3),
-                                    child: Chip(
-                                      label: Text(
-                                        queen.seasonsList[index].seasonNumber,
-                                        style: const TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 15),
+                        child: Row(
+                          children: [
+                            CustomQueenDetailsTextWidget(
+                              text: S.of(context).queenDetailsSeasons,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Wrap(
+                                  children: List.generate(
+                                    queen.seasonsList.length,
+                                    (index) => Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 3),
+                                      child: Chip(
+                                        label: Text(
+                                          queen.seasonsList[index].seasonNumber,
+                                          style: const TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        backgroundColor: DragRaceConstantsColors
+                                            .secondaryColor,
                                       ),
-                                      backgroundColor: DragRaceConstantsColors
-                                          .secondaryColor,
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ],
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               )
             ],
