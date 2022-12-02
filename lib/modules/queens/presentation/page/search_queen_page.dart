@@ -43,38 +43,38 @@ class _SearchQueenPageState extends State<SearchQueenPage> {
           ),
           centerTitle: true,
         ),
-        body: SingleChildScrollView(
-          child: Center(
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 20, bottom: 20),
-                  child: Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 20),
-                    child: TextField(
-                      controller: queenName,
-                      decoration: InputDecoration(
-                        hintText: S.of(context).searchQueenPageHintText,
-                        contentPadding: const EdgeInsets.only(left: 20),
-                        hintStyle: const TextStyle(color: Colors.grey),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(50),
-                          borderSide: const BorderSide(
-                            color: DragRaceConstantsColors.secondaryColor,
-                          ),
-                        ),
-                        suffixIcon: const Icon(
-                          Icons.search_rounded,
+        body: Center(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 20, bottom: 20),
+                child: Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 20),
+                  child: TextField(
+                    controller: queenName,
+                    decoration: InputDecoration(
+                      hintText: S.of(context).searchQueenPageHintText,
+                      contentPadding: const EdgeInsets.only(left: 20),
+                      hintStyle: const TextStyle(color: Colors.grey),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50),
+                        borderSide: const BorderSide(
                           color: DragRaceConstantsColors.secondaryColor,
-                          size: 35,
                         ),
                       ),
-                      onChanged: (typedName) => controller.getQueenByName(
-                          typedName, widget.queenList),
+                      suffixIcon: const Icon(
+                        Icons.search_rounded,
+                        color: DragRaceConstantsColors.secondaryColor,
+                        size: 35,
+                      ),
                     ),
+                    onChanged: (typedName) => controller.getQueenByName(
+                        typedName, widget.queenList),
                   ),
                 ),
-                ValueListenableBuilder<SearchQueenPageState>(
+              ),
+              Expanded(
+                child: ValueListenableBuilder<SearchQueenPageState>(
                   valueListenable: controller,
                   builder: (context, state, _) {
                     switch (state) {
@@ -99,8 +99,8 @@ class _SearchQueenPageState extends State<SearchQueenPage> {
                     }
                   },
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       );
